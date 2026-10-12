@@ -1,0 +1,1102 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4A4A3F">
+<meta name="color-scheme" content="light">
+<title>ROTINA GERAL</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ROTINA GERAL">
+<meta name="application-name" content="ROTINA GERAL">
+<meta name="description" content="Rotina de organização e manutenção residencial · Gisele Oliveira">
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root{--g:#4A4A3F;--gd:#33332B;--t:#2B2B26;--mut:#77736A;--gold:#AD8B46;--gs:#C9AD72;--cream:#F3F0E8;--bg:#F7F5EF;--line:#E2DED3;--rust:#A15C3C;--rustbg:#F7EFEA;--ok:#5E7350;
+--serif:Cambria,Caladea,Georgia,"Times New Roman",serif;--sans:Calibri,Carlito,-apple-system,"Segoe UI",Roboto,system-ui,sans-serif;}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{margin:0;background:var(--bg);color:var(--t);}
+body{font-family:var(--sans);font-size:17px;line-height:1.45;-webkit-text-size-adjust:100%;min-height:100vh;}
+button{font:inherit;color:inherit;}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px 40px;}
+.serif{font-family:var(--serif);}
+.kick{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);}
+.ic{width:20px;height:20px;flex:none;}
+[hidden]{display:none!important;}
+
+/* HERO */
+.hero{background:var(--g);color:#fff;padding:calc(24px + env(safe-area-inset-top)) 16px 28px;text-align:center;}
+.hero img{width:132px;height:132px;display:block;margin:4px auto 14px;}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:34px;margin:6px 0 4px;letter-spacing:.01em;}
+.hero .sub{font-family:var(--serif);font-style:italic;color:var(--gs);font-size:17px;}
+.hero .rule{width:44px;height:1px;background:var(--gold);margin:14px auto;}
+.hero .by{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#d8d4c8;}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:14px;}
+.datecard{display:flex;align-items:center;gap:12px;margin-top:-18px;position:relative;box-shadow:0 6px 18px rgba(51,51,43,.08);}
+.datecard label{flex:1;}
+.datecard input{font:inherit;font-size:17px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;width:100%;background:var(--bg);color:var(--t);min-height:48px;}
+.datecard .lbl{display:block;margin-bottom:6px;}
+.today{display:flex;gap:14px;align-items:center;background:var(--g);color:#fff;border:0;cursor:pointer;width:100%;text-align:left;}
+.today .n{font-family:var(--serif);font-size:40px;color:var(--gold);line-height:1;}
+.today .d{font-family:var(--serif);font-size:22px;}
+.today .f{color:var(--gs);font-family:var(--serif);font-style:italic;font-size:15px;}
+.today .go{margin-left:auto;font-size:26px;color:var(--gs);}
+.sect{margin:24px 0 8px;display:flex;align-items:center;gap:10px;}
+.sect::after{content:"";flex:1;height:1px;background:var(--line);}
+.days{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;}
+.dcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 4px 10px;text-align:center;cursor:pointer;min-height:96px;display:flex;flex-direction:column;align-items:center;gap:6px;}
+.dcard .a{font-size:14px;letter-spacing:.16em;color:var(--gd);font-weight:600;}
+.dcard.cur{border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold);}
+.ring{width:42px;height:42px;}
+.ring .bgc{stroke:var(--line);} .ring .fg{stroke:var(--gold);transition:stroke-dashoffset .3s;}
+.ring text{font-size:10px;fill:var(--mut);font-family:var(--sans);}
+.dlist .row{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line);cursor:pointer;}
+.dlist .row:last-child{border-bottom:0;}
+.dlist .row b{font-weight:600;letter-spacing:.12em;color:var(--gold);width:40px;flex:none;font-size:14px;padding-top:2px;}
+.dlist .row span{font-family:var(--serif);}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;}
+.lbtn{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;gap:10px;align-items:center;cursor:pointer;min-height:56px;text-align:left;}
+.lbtn .ic{color:var(--gold);}
+.note{font-size:13px;color:var(--mut);text-align:center;margin-top:18px;}
+
+/* APP BAR */
+.bar{position:sticky;top:0;z-index:20;background:var(--g);color:#fff;padding-top:env(safe-area-inset-top);}
+.bar .in{max-width:640px;margin:0 auto;display:flex;align-items:center;gap:6px;padding:6px 8px;}
+.ib{background:none;border:0;color:#fff;width:44px;height:44px;border-radius:10px;display:grid;place-items:center;cursor:pointer;}
+.ib:active{background:rgba(255,255,255,.12);}
+.bar .tt{flex:1;font-family:var(--serif);font-size:19px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.tabs{display:flex;max-width:640px;margin:0 auto;padding:0 8px 8px;gap:6px;}
+.tab{flex:1;background:transparent;border:1px solid rgba(201,173,114,.45);color:#e8e4d8;border-radius:10px;padding:9px 0;font-size:14px;letter-spacing:.14em;font-weight:600;cursor:pointer;min-height:44px;}
+.tab.on{background:var(--gold);border-color:var(--gold);color:#fff;}
+
+/* DAY */
+.dhead{padding:18px 0 4px;}
+.dhead h2{font-family:var(--serif);font-weight:400;font-size:28px;margin:4px 0 2px;color:var(--gd);}
+.dhead .foc{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:17px;}
+.dhead .goal{margin-top:10px;font-family:var(--serif);font-size:16px;color:var(--t);}
+.warn{background:var(--rustbg);border-left:3px solid var(--rust);padding:10px 12px;border-radius:8px;font-size:14px;margin-top:12px;}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
+.chip{background:var(--cream);border-left:2px solid var(--gold);padding:6px 10px;border-radius:6px;font-size:14px;display:flex;gap:6px;align-items:center;}
+.chip .ic{width:14px;height:14px;color:var(--gold);}
+.prog{margin-top:16px;}
+.prog .top{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;color:var(--mut);}
+.prog .pct{font-family:var(--serif);font-size:26px;color:var(--gd);}
+.pbar{height:10px;background:var(--cream);border-radius:99px;overflow:hidden;margin-top:6px;}
+.pbar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gs));width:0;transition:width .3s;border-radius:99px;}
+.next{background:var(--g);color:#fff;border-radius:14px;padding:14px 16px;margin-top:14px;display:flex;gap:12px;align-items:center;}
+.next .k2{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gs);}
+.next .tx{font-family:var(--serif);font-size:18px;line-height:1.3;margin-top:2px;}
+.next .bk{font-size:13px;color:#cfcabd;margin-top:2px;}
+.next button{margin-left:auto;background:var(--gold);border:0;color:#fff;border-radius:10px;padding:0 14px;min-height:48px;font-weight:600;cursor:pointer;flex:none;}
+.next.done{background:var(--ok);}
+.ctrl{display:flex;gap:8px;margin-top:14px;}
+.tg2{flex:1;background:#fff;border:1px solid var(--line);border-radius:10px;min-height:46px;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;}
+.tg2.on{background:var(--gd);color:#fff;border-color:var(--gd);}
+.blk{background:#fff;border:1px solid var(--line);border-radius:14px;margin-top:12px;overflow:hidden;}
+.blk.complete{border-color:#cdbf9c;}
+.bh{width:100%;background:none;border:0;display:flex;align-items:center;gap:12px;padding:14px 14px;cursor:pointer;text-align:left;min-height:64px;}
+.bh .bi{width:38px;height:38px;border-radius:10px;background:var(--cream);display:grid;place-items:center;color:var(--gold);flex:none;}
+.blk.complete .bh .bi{background:var(--gold);color:#fff;}
+.bh .bt{flex:1;min-width:0;}
+.bh .bn{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);}
+.bh .nm{font-family:var(--serif);font-size:18px;color:var(--gd);line-height:1.2;}
+.bh .wh{font-size:13px;color:var(--mut);}
+.bh .ct{font-size:14px;color:var(--mut);white-space:nowrap;}
+.bh .chev{transition:transform .2s;color:var(--mut);}
+.blk.closed .chev{transform:rotate(-90deg);}
+.blk.closed .bb{display:none;}
+.bb{border-top:1px solid var(--line);}
+.task{display:flex;gap:14px;align-items:flex-start;padding:12px 14px;border-bottom:1px solid #F0EDE5;cursor:pointer;min-height:56px;user-select:none;}
+.task:last-of-type{border-bottom:0;}
+.task input{position:absolute;opacity:0;width:1px;height:1px;}
+.box{width:28px;height:28px;border:2px solid var(--g);border-radius:8px;flex:none;display:grid;place-items:center;margin-top:-1px;transition:background .15s;}
+.box svg{opacity:0;width:18px;height:18px;color:#fff;}
+.task.on .box{background:var(--gold);border-color:var(--gold);}
+.task.on .box svg{opacity:1;}
+.task .txt{flex:1;font-size:17px;line-height:1.38;}
+.task.on .txt{color:var(--mut);text-decoration:line-through;text-decoration-color:rgba(119,115,106,.5);}
+.task.pausa .txt{font-style:italic;color:var(--mut);}
+.task.pausa .box{border-style:dashed;}
+.task:focus-within{outline:2px solid var(--gs);outline-offset:-2px;}
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--gold);color:var(--gold);padding:1px 6px;border-radius:4px;margin-left:6px;vertical-align:2px;font-style:normal;text-decoration:none;}
+.tag.prior{background:var(--gold);color:#fff;}
+.tag.pausa{border-color:#a9a598;color:var(--mut);}
+.tnote{display:block;font-size:14px;color:var(--mut);font-style:italic;margin-top:3px;text-decoration:none;}
+.res{background:var(--cream);font-size:14px;padding:10px 14px;color:var(--gd);}
+.res b{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;display:block;}
+.empty{padding:14px;font-size:15px;color:var(--mut);font-style:italic;}
+textarea{width:100%;min-height:120px;font:inherit;font-size:16px;border:1px solid var(--line);border-radius:10px;padding:12px;background:var(--bg);color:var(--t);resize:vertical;}
+.saved{font-size:12px;color:var(--mut);margin-top:6px;min-height:16px;}
+.sum{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.sum .n{font-family:var(--serif);font-size:30px;color:var(--gd);line-height:1.1;}
+.sum .l{font-size:13px;color:var(--mut);}
+.pend{margin:10px 0 0;padding:0;list-style:none;}
+.pend li{padding:8px 0;border-bottom:1px solid var(--line);font-size:15px;display:flex;gap:10px;}
+.pend li b{font-weight:600;color:var(--gold);font-size:12px;letter-spacing:.1em;white-space:nowrap;padding-top:2px;}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;}
+.btn{background:#fff;border:1px solid var(--g);color:var(--gd);border-radius:12px;min-height:52px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;padding:0 12px;}
+.btn.pri{background:var(--g);color:#fff;}
+.btn.dan{border-color:var(--rust);color:var(--rust);}
+.btn.full{grid-column:1/-1;}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(140%);background:var(--gd);color:#fff;padding:12px 18px;border-radius:12px;font-size:15px;transition:transform .25s;z-index:50;max-width:92vw;text-align:center;}
+.toast.show{transform:translateX(-50%) translateY(0);}
+
+/* RULES */
+.rcard h3{font-family:var(--serif);font-weight:400;font-size:19px;margin:0 0 4px;color:var(--gd);display:flex;gap:10px;align-items:center;}
+.rcard h3 .ic{color:var(--gold);}
+.rcard .meta{font-size:14px;color:var(--gold);margin-bottom:6px;}
+.rcard ul{margin:6px 0 0;padding-left:18px;font-size:15px;}
+.rcard li{margin-bottom:4px;}
+.st{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--gold);color:var(--gold);padding:1px 6px;border-radius:4px;margin-left:auto;white-space:nowrap;}
+.st.v{border-color:var(--rust);color:var(--rust);}
+.wk .row{padding:10px 0;border-bottom:1px solid var(--line);}
+.wk .row:last-child{border-bottom:0;}
+.wk .lab{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.wk .vals{display:grid;grid-template-columns:44px 1fr;gap:2px 8px;font-size:14.5px;}
+.wk .vals b{font-weight:600;color:var(--gd);font-size:12.5px;letter-spacing:.1em;padding-top:2px;}
+.seg{display:flex;gap:6px;overflow-x:auto;padding:12px 0 2px;scrollbar-width:none;}
+.seg::-webkit-scrollbar{display:none;}
+.seg button{flex:none;background:#fff;border:1px solid var(--line);border-radius:99px;padding:8px 14px;font-size:14px;cursor:pointer;min-height:40px;}
+.seg button.on{background:var(--gd);color:#fff;border-color:var(--gd);}
+.hist .row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);cursor:pointer;}
+.hist .row:last-child{border-bottom:0;}
+.hist .dt{flex:1;}
+.hist .dt div:first-child{font-family:var(--serif);font-size:17px;}
+.hist .dt div:last-child{font-size:13px;color:var(--mut);}
+.foot{text-align:center;margin-top:28px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);}
+.foot img{width:44px;opacity:.9;display:block;margin:0 auto 8px;}
+
+/* INSTALAÇÃO */
+.install{display:flex;gap:14px;align-items:center;}
+.install .ico{width:52px;height:52px;border-radius:12px;flex:none;box-shadow:0 2px 8px rgba(0,0,0,.15);}
+.install .tx{flex:1;font-size:15px;line-height:1.35;}
+.install .tx b{font-family:var(--serif);font-weight:400;font-size:18px;display:block;color:var(--gd);}
+.install .btn{min-height:46px;flex:none;}
+.sheet-bg{position:fixed;inset:0;background:rgba(30,30,25,.55);z-index:60;display:flex;align-items:flex-end;justify-content:center;}
+.sheet{background:#fff;width:100%;max-width:640px;border-radius:18px 18px 0 0;padding:20px 18px calc(22px + env(safe-area-inset-bottom));max-height:88vh;overflow:auto;}
+.sheet h3{font-family:var(--serif);font-weight:400;font-size:22px;margin:4px 0 12px;color:var(--gd);}
+.sheet ol{list-style:none;margin:0;padding:0;counter-reset:s;}
+.sheet li{counter-increment:s;display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line);font-size:16px;}
+.sheet li::before{content:counter(s);width:28px;height:28px;border-radius:50%;background:var(--gold);color:#fff;display:grid;place-items:center;flex:none;font-size:14px;font-weight:600;}
+.sheet li .ic{display:inline-block;vertical-align:-4px;color:var(--gold);}
+.sheet .tip{font-size:14px;color:var(--mut);margin:12px 0 14px;}
+
+/* PRINT */
+.ponly{display:none;}
+@media print{
+  @page{size:A4;margin:14mm 12mm;}
+  body{background:#fff;font-size:11pt;}
+  .bar,.ctrl,.acts,.next,.noprint,.toast,.chev,.warn{display:none!important;}
+  .ponly{display:block;}
+  .wrap{max-width:none;padding:0;}
+  .blk{break-inside:avoid;border-radius:0;margin-top:8px;}
+  .blk.closed .bb{display:block!important;}
+  .task{display:flex!important;min-height:0;padding:5px 10px;}
+  .box{width:16px;height:16px;border-width:1.5px;border-radius:3px;}
+  .box svg{width:12px;height:12px;}
+  .task .txt{font-size:10.5pt;}
+  .bh{min-height:0;padding:8px 10px;}
+  .bh .bi{width:26px;height:26px;}
+  textarea{border:1px solid #999;min-height:60px;}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+
+/* ===== v2: semana, gestão e editor ===== */
+.hswitch{background:transparent;border:1px solid rgba(201,173,114,.5);color:var(--gs);border-radius:99px;padding:7px 16px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;min-height:36px;}
+.days{grid-template-columns:repeat(var(--n,5),minmax(0,1fr));gap:6px;}
+.dcard{min-width:0;padding:10px 2px 8px;gap:4px;min-height:92px;}
+.dcard .dt{font-size:11px;color:var(--mut);}
+.dcard .a{font-size:13px;letter-spacing:.1em;}
+.ring{width:100%;max-width:42px;height:auto;}
+.wsum .top{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;color:var(--mut);}
+.wsum .pct{font-family:var(--serif);font-size:24px;color:var(--gd);}
+.wsum .btn{margin-top:12px;width:100%;}
+.lbtn.wide{grid-column:1/-1;}
+.fld{display:block;margin-top:12px;}
+.fld>span{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:5px;}
+.inp{width:100%;font:inherit;font-size:16px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--bg);color:var(--t);min-height:46px;}
+textarea.inp{min-height:72px;resize:vertical;line-height:1.35;}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.eblk{background:#fff;border:1px solid var(--line);border-radius:14px;margin-top:12px;overflow:hidden;}
+.eblk>summary{list-style:none;display:flex;gap:12px;align-items:center;padding:14px;cursor:pointer;min-height:62px;}
+.eblk>summary::-webkit-details-marker{display:none;}
+.eblk>summary .bi{width:38px;height:38px;border-radius:10px;background:var(--cream);display:grid;place-items:center;color:var(--gold);flex:none;}
+.eblk>summary .bt{flex:1;min-width:0;}
+.eblk>summary .chev{transition:transform .2s;color:var(--mut);transform:rotate(-90deg);}
+.eblk[open]>summary .chev{transform:none;}
+.ebody{border-top:1px solid var(--line);padding:2px 14px 14px;}
+.etask{border:1px solid var(--line);border-radius:12px;padding:10px;margin-top:10px;background:var(--bg);}
+.etask .inp{background:#fff;}
+.etask textarea.inp{min-height:52px;}
+.etask .num{font-size:11px;letter-spacing:.16em;color:var(--gold);margin-bottom:6px;text-transform:uppercase;}
+.etools{display:flex;gap:6px;margin-top:8px;align-items:center;flex-wrap:wrap;}
+.etools .inp{flex:1;min-width:130px;min-height:44px;}
+.mini{background:#fff;border:1px solid var(--line);border-radius:10px;width:44px;height:44px;display:grid;place-items:center;cursor:pointer;color:var(--gd);flex:none;padding:0;}
+.mini.dan{color:var(--rust);border-color:#e6cfc3;}
+.mini:disabled{opacity:.3;cursor:default;}
+.addb{width:100%;margin-top:12px;background:transparent;border:1.5px dashed var(--gs);color:var(--gd);border-radius:12px;min-height:50px;cursor:pointer;display:flex;gap:8px;align-items:center;justify-content:center;font-size:15px;}
+.addb .ic{color:var(--gold);}
+.sw{display:flex;gap:12px;align-items:center;cursor:pointer;font-size:16px;}
+.sw input{width:24px;height:24px;accent-color:var(--gold);flex:none;}
+.bacts{display:flex;gap:6px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line);align-items:center;}
+.bacts .sp{flex:1;font-size:12px;color:var(--mut);}
+.hrow{display:flex;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);}
+.hrow:last-child{border-bottom:0;}
+.hrow .nm{flex:1;min-width:0;}
+.hrow .nm div:first-child{font-family:var(--serif);font-size:17px;}
+.hrow .nm div:last-child{font-size:13px;color:var(--mut);}
+.hrow .btn{min-height:44px;font-size:14px;}
+.cur{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);border-radius:4px;padding:2px 6px;}
+.opt{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line);cursor:pointer;}
+.opt input{width:22px;height:22px;accent-color:var(--gold);margin-top:2px;flex:none;}
+.opt b{font-family:var(--serif);font-weight:400;font-size:17px;display:block;color:var(--gd);}
+.opt small{font-size:14px;color:var(--mut);}
+.gbtn{margin-left:auto;background:none;border:1px solid var(--line);border-radius:8px;width:36px;height:36px;display:grid;place-items:center;color:var(--gold);cursor:pointer;flex:none;}
+.rcard h3 .st+.gbtn{margin-left:6px;}
+.edflag{background:var(--gold);color:#fff;text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:5px 8px;}
+.help{font-size:14px;color:var(--mut);margin:8px 0 0;}
+.sheet .acts{margin-top:16px;}
+.hname{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;}
+.hswitch{display:inline-flex;align-items:center;gap:8px;max-width:100%;}
+.hswitch .ic{width:14px;height:14px;flex:none;}
+.hedit{background:none;border:1px solid rgba(201,173,114,.5);color:var(--gs);border-radius:99px;width:36px;height:36px;display:grid;place-items:center;cursor:pointer;padding:0;}
+.hedit .ic{width:15px;height:15px;}
+@media print{.edflag,.gbtn{display:none!important;}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<input type="file" id="filein" accept=".json,application/json" hidden>
+
+<script>
+"use strict";
+const SEED = {"name":"Casa Armando","subtitle":"Rotina de Organização e Manutenção Residencial","closingResult":"Casa entregue em condições de uso e pendências registradas.","days":[{"id":"seg","abbr":"SEG","name":"Segunda-feira","active":true,"focus":"Organização geral e abertura da semana","goal":"Recolocar a casa em ordem após o fim de semana, deixar as salas prontas para receber e trabalhar, higienizar a geladeira e definir as compras da semana.","priorities":["Geladeira higienizada","Lista de compras da semana","Salas prontas para receber","Toalhas · 1ª troca"],"blocks":[{"id":"b1","name":"Chegada e café da manhã","when":"Ao chegar · antes de a família tomar café","time":"","icon":"cup","result":"Café servido conforme o cardápio, com cozinha e mesa em ordem.","tasks":[{"id":"seg-1-0","t":"Organizar cozinha, pias, bancadas e mesa"},{"id":"seg-1-1","t":"Preparar e servir o café da manhã conforme a rotina e o cardápio da família"},{"id":"seg-1-2","t":"Conferir o aparador da cafeteira: limpo, abastecido e organizado","tag":"fixo"}]},{"id":"b2","name":"Ambientes sociais e entradas","when":"Enquanto a família toma café","time":"","icon":"door","result":"Entradas limpas e salas prontas para receber pessoas e para o trabalho.","tasks":[{"id":"seg-2-0","t":"Limpar garagens e entradas — lavar com água somente quando adequado"},{"id":"seg-2-1","t":"Organizar as salas de entrada, recolocando cada objeto no seu lugar"},{"id":"seg-2-2","t":"Retirar o pó e passar pano nas salas"},{"id":"seg-2-3","t":"Deixar as salas prontas para receber pessoas e, se houver escritório, deixá-lo pronto para uso","note":"Papéis e documentos de trabalho: alinhar sem ler, descartar ou mudar de lugar."},{"id":"seg-2-4","t":"Pausa para o café da colaboradora","tag":"pausa"}]},{"id":"b3","name":"Organização geral e lavanderia","when":"Após a pausa do café · antes de limpar","time":"","icon":"basket","result":"Casa sem objetos fora do lugar e primeira lavagem em andamento.","tasks":[{"id":"seg-3-0","t":"Retirar os itens do café, reorganizar a cozinha e guardar tudo o que foi utilizado"},{"id":"seg-3-1","t":"Deixar a cozinha livre e organizada para as atividades do almoço"},{"id":"seg-3-2","t":"Arrumar camas e organizar quartos e demais ambientes internos"},{"id":"seg-3-3","t":"Trocar as toalhas de banho — 1ª troca da semana","tag":"fixo"},{"id":"seg-3-4","t":"Recolher resíduos e esvaziar as lixeiras"},{"id":"seg-3-5","t":"Recolher as roupas e as toalhas usadas e levar à lavanderia em uma única viagem"},{"id":"seg-3-6","t":"Separar as peças por tecido, cor e etiqueta e iniciar a lavagem"}]},{"id":"b4","name":"Limpeza principal do dia","when":"Meio da manhã · máquina em ciclo","time":"","icon":"spark","result":"Banheiros, quartos e ambientes internos limpos antes do almoço.","tasks":[{"id":"seg-4-0","t":"Separar produtos, panos e equipamentos por ambiente — banheiro, cozinha e demais áreas, sem misturar"},{"id":"seg-4-1","t":"Limpar os banheiros"},{"id":"seg-4-2","t":"Limpar os quartos: retirar o pó de móveis e superfícies"},{"id":"seg-4-3","t":"Retirar o pó dos móveis dos demais ambientes internos"},{"id":"seg-4-4","t":"Ao fim de cada ciclo, estender ou levar as peças para secar e iniciar a próxima lavagem programada","tag":"ciclo"},{"id":"seg-4-5","t":"Limpar os pisos por último, dos quartos em direção às áreas de circulação"}]},{"id":"b5","name":"Preparação e pausa do almoço","when":"Antes do almoço da família","time":"","icon":"plate","result":"Mesa pronta e prioridades da manhã concluídas.","tasks":[{"id":"seg-5-0","t":"Conferir a cozinha e deixar a mesa preparada para o almoço"},{"id":"seg-5-1","t":"Confirmar que as tarefas prioritárias da manhã estão concluídas e anotar o que ficou pendente"},{"id":"seg-5-2","t":"Pausa para o almoço da colaboradora","tag":"pausa"}]},{"id":"b6","name":"Atividades complementares","when":"Após a pausa do almoço","time":"","icon":"list","result":"Geladeira higienizada, lista de compras pronta e áreas de lazer conservadas.","tasks":[{"id":"seg-6-0","t":"Organizar e higienizar a geladeira","tag":"fixo","note":"Retirar os itens uma prateleira por vez, devolvendo-os logo à refrigeração."},{"id":"seg-6-1","t":"Verificar alimentos, validade e condições de armazenamento","tag":"fixo"},{"id":"seg-6-2","t":"Elaborar a lista de compras da semana","tag":"fixo"},{"id":"seg-6-3","t":"Limpar a cozinha — piso por último"},{"id":"seg-6-4","t":"Limpar a área gourmet e o lavabo (se houver)"},{"id":"seg-6-5","t":"Remover a poeira da área ao redor da piscina (se houver) — água somente quando apropriado"}]},{"id":"b7","name":"Encerramento e conferência","when":"Final do expediente","time":"","icon":"check","result":"Lavanderia entregue limpa e roupas secas recolhidas.","tasks":[{"id":"seg-7-0","t":"Recolher as roupas secas — peças úmidas continuam secando"},{"id":"seg-7-1","t":"Finalizar a lavanderia: limpar bancadas e piso"}]}]},{"id":"ter","abbr":"TER","name":"Terça-feira","active":true,"focus":"Faxina do quarto do casal e banheiros detalhados","goal":"Executar a faxina completa do quarto do casal, com vidros e troca da roupa de cama, e a limpeza detalhada de todos os banheiros.","priorities":["Faxina do quarto do casal + vidros","Banheiros em limpeza detalhada","Roupa de cama · quarto do casal"],"blocks":[{"id":"b1","name":"Chegada e café da manhã","when":"Ao chegar · antes de a família tomar café","time":"","icon":"cup","result":"Café servido conforme o cardápio, com cozinha e mesa em ordem.","tasks":[{"id":"ter-1-0","t":"Organizar pias, mesas e bancadas"},{"id":"ter-1-1","t":"Preparar e servir o café da manhã conforme o cardápio da família"},{"id":"ter-1-2","t":"Conferir o aparador da cafeteira: limpo, abastecido e organizado","tag":"fixo"}]},{"id":"b2","name":"Ambientes sociais e entradas","when":"Enquanto a família toma café","time":"","icon":"door","result":"Salas e entradas em ordem; lavanderia preparada para o dia.","tasks":[{"id":"ter-2-0","t":"Organizar salas e entradas"},{"id":"ter-2-1","t":"Verificar se as entradas precisam de limpeza e, se necessário, limpar"},{"id":"ter-2-2","t":"Organizar a lavanderia"},{"id":"ter-2-3","t":"Limpar os calçados programados e deixá-los secando em local ventilado"},{"id":"ter-2-4","t":"Pausa para o café da colaboradora","tag":"pausa"}]},{"id":"b3","name":"Organização geral e lavanderia","when":"Após a pausa do café · antes de limpar","time":"","icon":"basket","result":"Residência organizada e roupas — inclusive a roupa de cama — em lavagem.","tasks":[{"id":"ter-3-0","t":"Organizar novamente a cozinha e deixá-la pronta para o almoço"},{"id":"ter-3-1","t":"Organizar toda a residência, recolocando os objetos nos lugares corretos"},{"id":"ter-3-2","t":"Arrumar os quartos"},{"id":"ter-3-3","t":"Trocar a roupa de cama do quarto do casal","tag":"fixo","note":"Dia sugerido, sujeito à validação da responsável."},{"id":"ter-3-4","t":"Organizar os banheiros e retirar os resíduos"},{"id":"ter-3-5","t":"Recolher as roupas e a roupa de cama, separar e levar à lavanderia em uma única viagem"},{"id":"ter-3-6","t":"Iniciar a lavagem conforme tecido, cor e etiqueta"}]},{"id":"b4","name":"Limpeza principal do dia","when":"Meio da manhã · máquina em ciclo","time":"","icon":"spark","result":"Quarto do casal e banheiros entregues em padrão de faxina.","tasks":[{"id":"ter-4-0","t":"Separar produtos, panos e equipamentos por ambiente — banheiro, cozinha e demais áreas, sem misturar"},{"id":"ter-4-1","t":"Faxina do quarto do casal: pó de móveis e superfícies, organização e piso","tag":"prior"},{"id":"ter-4-2","t":"Limpar os vidros do quarto do casal","tag":"fixo"},{"id":"ter-4-3","t":"Limpeza detalhada dos banheiros: box, pias, vasos sanitários e pisos","tag":"prior"},{"id":"ter-4-4","t":"Limpar os demais ambientes conforme a prioridade do dia"},{"id":"ter-4-5","t":"Ao fim de cada ciclo, estender ou levar as peças para secar e iniciar a próxima lavagem programada","tag":"ciclo"}]},{"id":"b5","name":"Preparação e pausa do almoço","when":"Antes do almoço da família","time":"","icon":"plate","result":"Mesa pronta e faxina concluída antes do almoço.","tasks":[{"id":"ter-5-0","t":"Conferir a cozinha e deixar a mesa preparada para o almoço"},{"id":"ter-5-1","t":"Pausa para o almoço da colaboradora","tag":"pausa"}]},{"id":"b6","name":"Atividades complementares","when":"Após a pausa do almoço","time":"","icon":"list","result":"Cozinha limpa, pisos finalizados e roupas separadas para passar.","tasks":[{"id":"ter-6-0","t":"Limpar a cozinha"},{"id":"ter-6-1","t":"Finalizar a limpeza dos pisos"},{"id":"ter-6-2","t":"Recolher as roupas secas e separá-las para passar"},{"id":"ter-6-3","t":"Guardar os calçados que já estiverem secos"}]},{"id":"b7","name":"Encerramento e conferência","when":"Final do expediente","time":"","icon":"check","result":"Materiais de limpeza higienizados e lavanderia entregue.","tasks":[{"id":"ter-7-0","t":"Limpar as lixeiras conforme a programação"},{"id":"ter-7-1","t":"Higienizar e guardar os utensílios de limpeza"},{"id":"ter-7-2","t":"Lavar e estender os panos de chão"},{"id":"ter-7-3","t":"Finalizar a lavanderia com a limpeza do piso"}]}]},{"id":"qua","abbr":"QUA","name":"Quarta-feira","active":true,"focus":"Faxina dos quartos das crianças e de visita · manutenção dos armários","goal":"Executar a faxina dos quartos das crianças e do quarto de visita, com vidros e troca da roupa de cama, higienizar os banheiros e manter a organização interna de armários, sala e despensa.","priorities":["Faxina · quartos das crianças e de visita + vidros","Roupa de cama · crianças e visita","Toalhas · 2ª troca","Armários, sala e despensa"],"blocks":[{"id":"b1","name":"Chegada e café da manhã","when":"Ao chegar · antes de a família tomar café","time":"","icon":"cup","result":"Café servido conforme o cardápio e cozinha mantida em ordem.","tasks":[{"id":"qua-1-0","t":"Organizar mesa e cozinha para o café"},{"id":"qua-1-1","t":"Preparar o café conforme o cardápio da família"},{"id":"qua-1-2","t":"Manter a cozinha organizada durante o serviço"},{"id":"qua-1-3","t":"Conferir o aparador da cafeteira: limpo, abastecido e organizado","tag":"fixo"}]},{"id":"b2","name":"Ambientes sociais e entradas","when":"Enquanto a família toma café","time":"","icon":"door","result":"Entradas limpas e salas sem poeira.","tasks":[{"id":"qua-2-0","t":"Limpar as entradas"},{"id":"qua-2-1","t":"Organizar as salas e retirar o pó"},{"id":"qua-2-2","t":"Pausa para o café da colaboradora","tag":"pausa"}]},{"id":"b3","name":"Organização geral e lavanderia","when":"Após a pausa do café · antes de limpar","time":"","icon":"basket","result":"Casa organizada, roupa de cama e toalhas em lavagem.","tasks":[{"id":"qua-3-0","t":"Organizar novamente a cozinha e deixá-la pronta para o almoço"},{"id":"qua-3-1","t":"Recolocar os objetos nos lugares corretos e organizar a parte interna da residência"},{"id":"qua-3-2","t":"Trocar a roupa de cama dos quartos das crianças (se houver)","tag":"fixo","note":"Dia sugerido, sujeito à validação da responsável."},{"id":"qua-3-v","t":"Quarto de visita (se houver): trocar a roupa de cama se o quarto foi usado desde a última troca","tag":"fixo"},{"id":"qua-3-3","t":"Trocar as toalhas de banho — 2ª troca da semana","tag":"fixo"},{"id":"qua-3-4","t":"Recolher os resíduos"},{"id":"qua-3-5","t":"Levar as roupas, a roupa de cama e as toalhas à lavanderia em uma única viagem"},{"id":"qua-3-6","t":"Iniciar as lavagens programadas"},{"id":"qua-3-7","t":"Limpar os calçados previstos"}]},{"id":"b4","name":"Limpeza principal do dia","when":"Meio da manhã · máquina em ciclo","time":"","icon":"spark","result":"Quartos das crianças, quarto de visita e banheiros entregues em padrão de faxina.","tasks":[{"id":"qua-4-0","t":"Separar os materiais necessários para a limpeza — sem misturar banheiro, cozinha e demais áreas"},{"id":"qua-4-1","t":"Faxina dos quartos das crianças (se houver): retirar o pó de móveis e superfícies e organizar brinquedos e objetos","tag":"prior"},{"id":"qua-4-v","t":"Faxina do quarto de visita (se houver): retirar o pó de móveis e superfícies, organizar e deixar a cama pronta para receber","tag":"prior"},{"id":"qua-4-2","t":"Limpar os vidros dos quartos das crianças e do quarto de visita","tag":"fixo"},{"id":"qua-4-3","t":"Guardar as roupas que já estiverem passadas","note":"Guardar antes de limpar o piso, aproveitando que o quarto está aberto."},{"id":"qua-4-4","t":"Higienizar adequadamente os banheiros"},{"id":"qua-4-5","t":"Ao fim de cada ciclo, estender ou levar as peças para secar e iniciar a próxima lavagem programada","tag":"ciclo"},{"id":"qua-4-6","t":"Limpar os pisos dos ambientes por último"}]},{"id":"b5","name":"Preparação e pausa do almoço","when":"Antes do almoço da família","time":"","icon":"plate","result":"Mesa pronta e faxina concluída antes do almoço.","tasks":[{"id":"qua-5-0","t":"Conferir a cozinha e deixar a mesa preparada para o almoço"},{"id":"qua-5-1","t":"Pausa para o almoço da colaboradora","tag":"pausa"}]},{"id":"b6","name":"Atividades complementares","when":"Após a pausa do almoço","time":"","icon":"list","result":"Cozinha finalizada e armários, sala e despensa em ordem.","tasks":[{"id":"qua-6-0","t":"Finalizar a limpeza e a organização da cozinha"},{"id":"qua-6-1","t":"Manutenção da organização interna de armários, sala e despensa","tag":"fixo","note":"Somente armários autorizados pela família. Manutenção, não faxina profunda."}]},{"id":"b7","name":"Encerramento e conferência","when":"Final do expediente","time":"","icon":"check","result":"Lavanderia organizada e todos os ambientes conferidos.","tasks":[{"id":"qua-7-0","t":"Organizar a lavanderia"},{"id":"qua-7-1","t":"Conferir todos os ambientes antes do encerramento"}]}]},{"id":"qui","abbr":"QUI","name":"Quinta-feira","active":true,"focus":"Manutenção, conservação e preparação para a sexta","goal":"Manter a casa em ordem com uma rotina mais leve, dar atenção ao lavabo e à área gourmet e deixar registrado o que a sexta-feira vai exigir.","priorities":["Lavabo impecável","Área gourmet conforme necessidade","Sexta-feira preparada"],"blocks":[{"id":"b1","name":"Chegada e café da manhã","when":"Ao chegar · antes de a família tomar café","time":"","icon":"cup","result":"Café servido conforme o cardápio, com cozinha e mesa em ordem.","tasks":[{"id":"qui-1-0","t":"Preparar e organizar a cozinha para o café da manhã"},{"id":"qui-1-1","t":"Servir o café conforme a rotina e o cardápio da família"},{"id":"qui-1-2","t":"Conferir o aparador da cafeteira: limpo, abastecido e organizado","tag":"fixo"}]},{"id":"b2","name":"Ambientes sociais e entradas","when":"Enquanto a família toma café","time":"","icon":"door","result":"Salas organizadas e lavabo pronto para visitas.","tasks":[{"id":"qui-2-0","t":"Organizar as salas"},{"id":"qui-2-1","t":"Organizar o lavabo (se houver) e deixá-lo livre de poeira"},{"id":"qui-2-2","t":"Conferir a limpeza da lixeira do lavabo"},{"id":"qui-2-3","t":"Substituir as toalhas do lavabo sempre que necessário"},{"id":"qui-2-4","t":"Pausa para o café da colaboradora","tag":"pausa"}]},{"id":"b3","name":"Organização geral e lavanderia","when":"Após a pausa do café · antes de limpar","time":"","icon":"basket","result":"Ambientes internos organizados e lavagens em andamento.","tasks":[{"id":"qui-3-0","t":"Guardar os itens do café e reorganizar a cozinha, deixando-a pronta para o almoço"},{"id":"qui-3-1","t":"Organizar os ambientes internos da casa"},{"id":"qui-3-2","t":"Arrumar as camas"},{"id":"qui-3-3","t":"Recolher os resíduos"},{"id":"qui-3-4","t":"Encaminhar as roupas à lavanderia em uma única viagem"},{"id":"qui-3-5","t":"Iniciar as lavagens"},{"id":"qui-3-6","t":"Lavar os calçados previstos"}]},{"id":"b4","name":"Limpeza principal do dia","when":"Meio da manhã · máquina em ciclo","time":"","icon":"spark","result":"Banheiros limpos e casa conservada.","tasks":[{"id":"qui-4-0","t":"Separar produtos, panos e equipamentos por ambiente — banheiro, cozinha e demais áreas, sem misturar"},{"id":"qui-4-1","t":"Limpar os banheiros"},{"id":"qui-4-2","t":"Retirar o pó dos móveis"},{"id":"qui-4-3","t":"Ao fim de cada ciclo, estender ou levar as peças para secar e iniciar a próxima lavagem programada","tag":"ciclo"},{"id":"qui-4-4","t":"Passar pano nos pisos por último"}]},{"id":"b5","name":"Preparação e pausa do almoço","when":"Antes do almoço da família","time":"","icon":"plate","result":"Mesa pronta para o almoço.","tasks":[{"id":"qui-5-0","t":"Conferir a cozinha e deixar a mesa preparada para o almoço"},{"id":"qui-5-1","t":"Pausa para o almoço da colaboradora","tag":"pausa"}]},{"id":"b6","name":"Atividades complementares","when":"Após a pausa do almoço","time":"","icon":"list","result":"Cozinha limpa, área gourmet conservada e sexta-feira planejada.","tasks":[{"id":"qui-6-0","t":"Limpar a cozinha"},{"id":"qui-6-1","t":"Organizar e limpar a área gourmet (se houver), conforme a necessidade"},{"id":"qui-6-2","t":"Anotar o que a sexta-feira vai exigir: geladeira, área gourmet, vidros e entradas","tag":"prior"}]},{"id":"b7","name":"Encerramento e conferência","when":"Final do expediente","time":"","icon":"check","result":"Lavanderia finalizada e materiais guardados.","tasks":[{"id":"qui-7-0","t":"Finalizar a lavanderia"},{"id":"qui-7-1","t":"Lavar e estender os panos utilizados na limpeza"},{"id":"qui-7-2","t":"Guardar materiais e equipamentos"}]}]},{"id":"sex","abbr":"SEX","name":"Sexta-feira","active":true,"focus":"Entrega da casa para o fim de semana","goal":"Entregar a residência pronta para o fim de semana: entradas limpas, vidros das salas e cozinha, geladeira organizada e área de churrasqueira pronta para uso.","priorities":["Geladeira organizada","Churrasqueira pronta para uso","Entradas limpas","Vidros das salas e cozinha","Convivência pronta para o fim de semana","Toalhas · 3ª troca"],"blocks":[{"id":"b1","name":"Chegada e café da manhã","when":"Ao chegar · antes de a família tomar café","time":"","icon":"cup","result":"Café servido conforme o cardápio, com cozinha e mesa em ordem.","tasks":[{"id":"sex-1-0","t":"Organizar pias, mesas e bancadas"},{"id":"sex-1-1","t":"Preparar e servir o café da manhã"},{"id":"sex-1-2","t":"Conferir o aparador da cafeteira: limpo, abastecido e organizado","tag":"fixo"}]},{"id":"b2","name":"Ambientes sociais e entradas","when":"Enquanto a família toma café","time":"","icon":"door","result":"Entradas limpas e ambientes sociais prontos.","tasks":[{"id":"sex-2-0","t":"Limpar garagens e entradas, conforme a viabilidade","tag":"prior"},{"id":"sex-2-1","t":"Organizar as salas e os ambientes sociais"},{"id":"sex-2-2","t":"Pausa para o café da colaboradora","tag":"pausa"}]},{"id":"b3","name":"Organização geral e lavanderia","when":"Após a pausa do café · antes de limpar","time":"","icon":"basket","result":"Ambientes organizados, toalhas trocadas e lavagens em andamento.","tasks":[{"id":"sex-3-0","t":"Reorganizar a cozinha e deixá-la pronta para o almoço"},{"id":"sex-3-1","t":"Organizar os ambientes internos antes da limpeza"},{"id":"sex-3-2","t":"Trocar as toalhas de banho — 3ª troca da semana","tag":"fixo"},{"id":"sex-3-3","t":"Recolher as roupas e as toalhas e levar à lavanderia em uma única viagem"},{"id":"sex-3-4","t":"Organizar a lavanderia"},{"id":"sex-3-5","t":"Separar e lavar as peças programadas"},{"id":"sex-3-6","t":"Limpar os calçados"}]},{"id":"b4","name":"Limpeza principal do dia","when":"Meio da manhã · máquina em ciclo","time":"","icon":"spark","result":"Limpeza interna concluída antes do almoço.","tasks":[{"id":"sex-4-0","t":"Preparar os equipamentos de limpeza — sem misturar banheiro, cozinha e demais áreas"},{"id":"sex-4-1","t":"Limpar os banheiros: higienizar pias, box e vasos sanitários"},{"id":"sex-4-2","t":"Limpar os quartos"},{"id":"sex-4-3","t":"Retirar o pó dos móveis"},{"id":"sex-4-4","t":"Ao fim de cada ciclo, estender ou levar as peças para secar e iniciar a próxima lavagem programada","tag":"ciclo"},{"id":"sex-4-5","t":"Limpar os pisos de quartos, banheiros e circulação interna","note":"Pisos de salas, cozinha e lavanderia ficam para depois dos vidros (Bloco 06)."},{"id":"sex-4-6","t":"Confirmar que a limpeza interna está concluída","tag":"prior"}]},{"id":"b5","name":"Preparação e pausa do almoço","when":"Antes do almoço da família","time":"","icon":"plate","result":"Mesa posta para o almoço.","tasks":[{"id":"sex-5-0","t":"Deixar a mesa posta para o almoço"},{"id":"sex-5-1","t":"Pausa para o almoço da colaboradora","tag":"pausa"}]},{"id":"b6","name":"Atividades complementares","when":"Após a pausa do almoço","time":"","icon":"list","result":"Geladeira, vidros, churrasqueira e áreas de convivência prontos para o fim de semana.","tasks":[{"id":"sex-6-0","t":"Limpar e organizar a cozinha"},{"id":"sex-6-1","t":"Conferir e organizar a geladeira","tag":"fixo"},{"id":"sex-6-2","t":"Limpar os vidros das salas e da cozinha","tag":"fixo"},{"id":"sex-6-3","t":"Finalizar os pisos das salas e da cozinha"},{"id":"sex-6-4","t":"Conferir e organizar a churrasqueira (se houver), deixando-a pronta para uso","tag":"prior"},{"id":"sex-6-5","t":"Deixar a área gourmet (se houver) limpa e preparada para utilização","tag":"prior"},{"id":"sex-6-6","t":"Conferir as áreas de convivência preparadas para o fim de semana","tag":"prior"},{"id":"sex-6-v","t":"Conferir o quarto de visita (se houver): cama feita, toalhas limpas e ambiente arejado para o fim de semana"}]},{"id":"b7","name":"Encerramento e conferência","when":"Final do expediente","time":"","icon":"check","result":"Lavanderia entregue limpa e casa pronta para o fim de semana.","tasks":[{"id":"sex-7-0","t":"Recolher e guardar roupas e calçados que estiverem secos e prontos"},{"id":"sex-7-1","t":"Lavar, higienizar e guardar todos os utensílios utilizados"},{"id":"sex-7-2","t":"Finalizar o piso da lavanderia"},{"id":"sex-7-3","t":"Entregar a lavanderia limpa e organizada"}]}]},{"id":"sab","abbr":"SÁB","name":"Sábado","active":false,"focus":"","goal":"","priorities":[],"blocks":[]},{"id":"dom","abbr":"DOM","name":"Domingo","active":false,"focus":"","goal":"","priorities":[],"blocks":[]}],"closing":[{"id":"c-0","t":"Cozinha limpa e organizada"},{"id":"c-1","t":"Bancadas e mesas em ordem"},{"id":"c-2","t":"Salas organizadas"},{"id":"c-3","t":"Quartos organizados"},{"id":"c-4","t":"Banheiros conferidos"},{"id":"c-5","t":"Lixeiras verificadas"},{"id":"c-6","t":"Roupas encaminhadas ou guardadas conforme a etapa de lavagem"},{"id":"c-7","t":"Calçados guardados quando secos"},{"id":"c-8","t":"Lavanderia limpa"},{"id":"c-9","t":"Panos de limpeza lavados e estendidos"},{"id":"c-10","t":"Produtos e utensílios armazenados corretamente"},{"id":"c-11","t":"Materiais de limpeza higienizados"},{"id":"c-12","t":"Pendências registradas"},{"id":"c-13","t":"Ambientes entregues em condições de uso"}],"guides":[{"id":"g1","section":"freq","title":"Geladeira","icon":"fridge","meta":"2× por semana · Seg: higienização, organização, validade e lista de compras · Sex: conferência e organização","status":"Definido","items":["Segunda: retirar os itens por prateleira, higienizar, verificar validade e condições de armazenamento.","Segunda: elaborar a lista de compras da semana.","Sexta: conferir e organizar para o fim de semana."]},{"id":"g2","section":"freq","title":"Roupas de cama","icon":"bed","meta":"1× por semana, por quarto · Ter: quarto do casal · Qua: quartos das crianças e quarto de visita","status":"A validar","items":["Trocar no dia da faxina de cada quarto, evitando concentrar toda a roupa de cama em um só dia.","Lavar conforme a etiqueta de cada peça."]},{"id":"g3","section":"freq","title":"Toalhas de banho","icon":"towel","meta":"3× por semana + sempre que necessário · Seg · Qua · Sex","status":"A validar","items":["Trocar no Bloco 03, junto com o recolhimento das roupas.","Substituição adicional sempre que necessário."]},{"id":"g4","section":"freq","title":"Toalhas do lavabo (se houver)","icon":"towel","meta":"Sempre que necessário · Conferência reforçada na quinta","status":"Definido","items":["Substituir sempre que necessário; conferir também lixeira e poeira do lavabo."]},{"id":"g5","section":"freq","title":"Vidros","icon":"window","meta":"1× por semana, por ambiente · Ter: quarto do casal · Qua: quartos das crianças e quarto de visita · Sex: salas e cozinha","status":"Definido","items":["Limpar os vidros antes do piso do ambiente, para que respingos não sujem o piso já limpo."]},{"id":"g6","section":"freq","title":"Armários internos","icon":"cabinet","meta":"1× por semana, em blocos de manutenção · Qua: armários, sala e despensa","status":"A validar","items":["Manutenção da organização interna — não é faxina profunda diária.","Somente armários autorizados pela família; respeitar a privacidade."]},{"id":"g7","section":"freq","title":"Aparador da cafeteira","icon":"coffee","meta":"Diário · Seg a Sex · Bloco 01 e conferência ao longo do dia","status":"Definido","items":["Conferir limpeza, abastecimento e organização."]},{"id":"g8","section":"freq","title":"Lavanderia","icon":"wash","meta":"Diário · Seg a Sex · início no Bloco 03, entrega no Bloco 07","status":"Definido","items":["Separar as roupas por tecido, cor e instruções de lavagem.","Lavar, secar e guardar adequadamente os panos de limpeza.","Não misturar panos de banheiro, cozinha e demais ambientes.","Não guardar peças ou calçados ainda úmidos.","Encerrar o dia com os equipamentos organizados."]},{"id":"g9","section":"amb","title":"Cozinha","icon":"plate","meta":"","items":["A cozinha é o primeiro ambiente do dia: o café da família vem antes de qualquer outra tarefa.","Depois do café, deixar bancadas livres para as atividades do almoço.","Piso da cozinha sempre por último na limpeza do ambiente."]},{"id":"g10","section":"amb","title":"Aparador da cafeteira","icon":"coffee","meta":"","items":["Conferir diariamente limpeza, abastecimento e organização.","Repetir a conferência ao passar pela cozinha e no encerramento."]},{"id":"g11","section":"amb","title":"Salas e ambientes sociais","icon":"door","meta":"","items":["Devem estar prontas todos os dias para receber pessoas. Se houver escritório em casa, deixá-lo pronto para uso.","Papéis e documentos de trabalho: alinhar sem ler, descartar ou mudar de lugar. Na dúvida, deixar como está e perguntar."]},{"id":"g12","section":"amb","title":"Quartos","icon":"bed","meta":"","items":["Organizar primeiro (camas, objetos, roupas), limpar depois — um ambiente organizado uma única vez.","Respeitar a privacidade: não abrir gavetas e armários sem autorização.","Guardar roupas passadas antes de limpar o piso."]},{"id":"g13","section":"amb","title":"Quarto do casal","icon":"bed","meta":"","items":["Faxina completa na terça, com vidros e troca da roupa de cama.","Closets, gavetas e criados-mudos somente com autorização; objetos pessoais e documentos permanecem onde estão."]},{"id":"g14","section":"amb","title":"Quartos das crianças (se houver)","icon":"bed","meta":"","items":["Faxina na quarta, com vidros e troca da roupa de cama.","Organizar brinquedos, livros e material escolar por categoria, cada item no seu lugar.","Produtos de limpeza nunca ficam ao alcance das crianças: guardar logo após o uso."]},{"id":"g15","section":"amb","title":"Quarto de visita (se houver)","icon":"bed","meta":"","items":["Faxina na quarta, com vidros; trocar a roupa de cama sempre que o quarto for usado.","Mesmo sem uso, retirar o pó e arejar, para que esteja sempre pronto para receber.","Antes do fim de semana ou de uma visita: cama feita, toalhas limpas e lixeira vazia."]},{"id":"g16","section":"amb","title":"Banheiros e lavabo","icon":"drop","meta":"","items":["Materiais do banheiro são exclusivos e não circulam por outros ambientes (circuito sanitário com kit exclusivo).","Panos separados por ambiente, com microfibras por cor. Definir as cores com a família.","Lavabo (se houver): poeira, lixeira e toalhas sempre conferidos — é o banheiro das visitas."]},{"id":"g17","section":"amb","title":"Lavanderia e panos","icon":"wash","meta":"","items":["Iniciar a primeira lavagem logo após recolher as roupas, para a máquina trabalhar enquanto a limpeza acontece.","Separar por tecido, cor e etiqueta; não misturar panos de banheiro, cozinha e demais ambientes.","Nunca guardar peças úmidas; encerrar o dia com bancadas, piso e equipamentos organizados."]},{"id":"g18","section":"amb","title":"Calçados","icon":"shoe","meta":"","items":["Limpar pela manhã para que sequem até o fim do expediente.","Guardar somente quando completamente secos; os úmidos permanecem em local ventilado."]},{"id":"g19","section":"amb","title":"Garagens, entradas e piscina (se houver)","icon":"home","meta":"","items":["Executar durante o café da família, sem interferir na circulação dos moradores.","Usar água somente quando adequado; na piscina, remover a poeira da área ao redor."]},{"id":"g20","section":"amb","title":"Área gourmet e churrasqueira (se houver)","icon":"flame","meta":"","items":["Segunda: limpeza após o almoço. Quinta: conforme a necessidade.","Sexta: conferida, organizada e pronta para uso no fim de semana."]},{"id":"g21","section":"amb","title":"Geladeira e despensa","icon":"fridge","meta":"","items":["Segunda: higienizar, verificar validade e preparar a lista de compras.","Sexta: conferir e organizar. Quarta: manutenção da organização da despensa."]},{"id":"g22","section":"princ","title":"Sequência de todos os dias","meta":"","items":["Preparar → Organizar → Executar a limpeza → Conferir → Finalizar"]},{"id":"g23","section":"princ","title":"O café da família vem primeiro","meta":"","items":["Ao chegar, a cozinha é preparada e o café servido antes de qualquer outra atividade."]},{"id":"g24","section":"princ","title":"Organizar antes de limpar","meta":"","items":["Camas, objetos, resíduos e roupas são resolvidos no Bloco 03. A limpeza do Bloco 04 encontra os ambientes livres — cada ambiente é organizado uma única vez."]},{"id":"g25","section":"princ","title":"Pisos sempre por último","meta":"","items":["Primeiro o que produz sujeira (pó, vidros, banheiros); o piso fecha a limpeza de cada ambiente."]},{"id":"g26","section":"princ","title":"A máquina trabalha enquanto você trabalha","meta":"","items":["A lavagem começa antes da limpeza principal; ao fim de cada ciclo, estender e iniciar a próxima."]},{"id":"g27","section":"princ","title":"Uma viagem à lavanderia","meta":"","items":["Roupas, toalhas e roupa de cama do dia são recolhidas juntas, evitando idas e vindas entre quartos e lavanderia."]},{"id":"g28","section":"princ","title":"Materiais por ambiente","meta":"","items":["Banheiro, cozinha e demais áreas com panos e utensílios próprios, sem contaminação cruzada."]},{"id":"g29","section":"princ","title":"O almoço tem hora protegida","meta":"","items":["Tarefas demoradas ficam antes do Bloco 05 ou depois da pausa do almoço, nunca encostadas no serviço da refeição."]},{"id":"g30","section":"princ","title":"Pausas fazem parte da rotina","meta":"","items":["A pausa do café e a do almoço da colaboradora estão previstas em todos os dias."]},{"id":"g31","section":"princ","title":"Discrição e privacidade","meta":"","items":["Escritório, quartos e armários são tratados com sigilo e só com autorização."]},{"id":"g32","section":"princ","title":"Conferir e registrar","meta":"","items":["O dia termina com a conferência final; o que não foi feito é registrado como pendência, não esquecido."]},{"id":"g33","section":"val","title":"Ambientes da casa","meta":"","items":["Conferir quais ambientes a casa tem: lavabo, área gourmet, churrasqueira, piscina, escritório. Tarefas de ambientes que a casa não tiver ficam sem marcar ou podem ser removidas no editor."]},{"id":"g34","section":"val","title":"Quartos","meta":"","items":["Confirmar quantos quartos de cada tipo a casa tem: quarto do casal (faxina na terça), quartos das crianças e quarto de visita (faxina na quarta). Se a casa não tiver algum deles, a tarefa fica sem marcar ou pode ser removida no editor."]},{"id":"g35","section":"val","title":"Roupas de cama","meta":"","items":["Troca no dia da faxina de cada quarto (terça e quarta); no quarto de visita, sempre que tiver sido usado."]},{"id":"g36","section":"val","title":"Toalhas de banho","meta":"","items":["Dias de referência sugeridos: segunda, quarta e sexta."]},{"id":"g37","section":"val","title":"Horários","meta":"","items":["Definir início e fim do expediente, horário do café e do almoço da família e duração das pausas da colaboradora."]},{"id":"g38","section":"val","title":"Preparo do almoço","meta":"","items":["A rotina prevê preparar a cozinha e a mesa; definir quem prepara a refeição."]},{"id":"g39","section":"val","title":"Roupas para passar","meta":"","items":["Terça separa as roupas para passar e quarta guarda as passadas — definir quem passa e em que momento."]},{"id":"g40","section":"val","title":"Dimensão da casa","meta":"","items":["Registrar metragem e número de quartos e banheiros, para estimar os tempos de cada bloco."]},{"id":"g41","section":"val","title":"Uso de água","meta":"","items":["Garagens, entradas e área da piscina (se houver): definir quando a lavagem com água é adequada."]},{"id":"g42","section":"val","title":"Armários internos","meta":"","items":["Definir quais armários a colaboradora pode abrir e organizar."]},{"id":"g43","section":"val","title":"Panos e produtos","meta":"","items":["Definir com a família as cores de panos por ambiente e os produtos por superfície."]},{"id":"g44","section":"val","title":"Lavanderia","meta":"","items":["Seguir as etiquetas das peças e as orientações da família."]},{"id":"g45","section":"val","title":"Calçados programados","meta":"","items":["Definir quais calçados entram em cada dia (terça a sexta)."]},{"id":"g46","section":"val","title":"Lixeiras","meta":"","items":["Definir a programação de limpeza das lixeiras."]},{"id":"g47","section":"val","title":"Lista de compras","meta":"","items":["Definir a quem a lista é entregue e em que formato."]}]};
+const ICONS = Object.assign({
+  edit:'<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M14 6l4 4"/>',
+  plus:'<path d="M12 5v14M5 12h14"/>',
+  trash:'<path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/>',
+  up:'<path d="M6 15l6-6 6 6"/>',
+  down:'<path d="M6 9l6 6 6-6"/>',
+  copy:'<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/>',
+  upload:'<path d="M12 16V4"/><path d="M7 9l5-5 5 5"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/>',
+  share:'<path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M6 11H5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-1"/>',
+  gear:'<path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/>',
+  lock:'<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
+  calendar:'<rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/>'
+}, {"cup": "<path d=\"M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z\"/><path d=\"M16 11h1.5a2.5 2.5 0 0 1 0 5H16\"/><path d=\"M8 3c0 1.5 1 1.5 1 3\"/><path d=\"M12 3c0 1.5 1 1.5 1 3\"/>", "door": "<path d=\"M5 21V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v17\"/><path d=\"M3 21h18\"/><circle cx=\"15\" cy=\"12\" r=\".9\"/>", "basket": "<path d=\"M3 10h18l-2 10H5z\"/><path d=\"M8 10l4-6 4 6\"/><path d=\"M9 14v3\"/><path d=\"M15 14v3\"/>", "spark": "<path d=\"M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z\"/><path d=\"M19 16l.6 1.6 1.6.6-1.6.6-.6 1.6-.6-1.6-1.6-.6 1.6-.6z\"/>", "plate": "<circle cx=\"12\" cy=\"12\" r=\"8\"/><circle cx=\"12\" cy=\"12\" r=\"4.5\"/>", "list": "<path d=\"M9 6h11\"/><path d=\"M9 12h11\"/><path d=\"M9 18h11\"/><circle cx=\"4.5\" cy=\"6\" r=\".9\"/><circle cx=\"4.5\" cy=\"12\" r=\".9\"/><circle cx=\"4.5\" cy=\"18\" r=\".9\"/>", "check": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M8 12.5l2.7 2.7L16.5 9.5\"/>", "fridge": "<rect x=\"6\" y=\"2.5\" width=\"12\" height=\"19\" rx=\"2\"/><path d=\"M6 10h12\"/><path d=\"M9 5.5v2\"/><path d=\"M9 13v3\"/>", "bed": "<path d=\"M3 19V7\"/><path d=\"M3 15h18v4\"/><path d=\"M21 15v-2.5a3 3 0 0 0-3-3h-7V15\"/><circle cx=\"7\" cy=\"12\" r=\"1.6\"/>", "towel": "<path d=\"M6 3h12v18H6z\"/><path d=\"M6 7h12\"/><path d=\"M9 21v-3\"/><path d=\"M15 21v-3\"/>", "window": "<rect x=\"4\" y=\"3\" width=\"16\" height=\"18\" rx=\"1\"/><path d=\"M12 3v18\"/><path d=\"M4 12h16\"/>", "cabinet": "<rect x=\"4\" y=\"3\" width=\"16\" height=\"18\" rx=\"1\"/><path d=\"M12 3v18\"/><path d=\"M10 11v2\"/><path d=\"M14 11v2\"/>", "coffee": "<path d=\"M5 8h11v6a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z\"/><path d=\"M16 10h2a2 2 0 0 1 0 4h-2\"/><path d=\"M3 21h16\"/>", "wash": "<rect x=\"4\" y=\"2.5\" width=\"16\" height=\"19\" rx=\"2\"/><circle cx=\"12\" cy=\"13\" r=\"5\"/><circle cx=\"7.5\" cy=\"6\" r=\".8\"/><circle cx=\"10.5\" cy=\"6\" r=\".8\"/>", "shoe": "<path d=\"M3 17v-6l4-1 3 3 4 1.2 5 1a2 2 0 0 1 2 2V17z\"/><path d=\"M3 20h18\"/>", "home": "<path d=\"M3 11l9-7 9 7\"/><path d=\"M5 10v10h14V10\"/><path d=\"M10 20v-6h4v6\"/>", "flame": "<path d=\"M12 3c1 3 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5 0 2 1 3 2 3 0-3-1-5 1-8.5z\"/>", "drop": "<path d=\"M12 3l5.5 7.5A6.5 6.5 0 1 1 6.5 10.5z\"/>", "star": "<path d=\"M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.8l-5.2 2.8 1-5.8-4.3-4.1 5.9-.9z\"/>", "clock": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/>", "pin": "<path d=\"M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z\"/><circle cx=\"12\" cy=\"9.5\" r=\"2.5\"/>", "printer": "<path d=\"M7 9V3h10v6\"/><rect x=\"3\" y=\"9\" width=\"18\" height=\"8\" rx=\"2\"/><path d=\"M7 14h10v7H7z\"/>", "download": "<path d=\"M12 3v12\"/><path d=\"M7 10l5 5 5-5\"/><path d=\"M4 21h16\"/>", "expand": "<path d=\"M7 9l5-5 5 5\"/><path d=\"M7 15l5 5 5-5\"/>", "alert": "<path d=\"M12 3.5l9.5 16.5h-19z\"/><path d=\"M12 10v4.5\"/><circle cx=\"12\" cy=\"17.3\" r=\".8\"/>"});
+const LOGO_LIGHT = "icons/logo-light.png", LOGO_DARK = "icons/logo-dark.png";
+const APP_VERSION = "2.0.0";
+
+/* ---------- utilidades ---------- */
+const $ = (s, el=document) => el.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const icon = (n, cls="ic") => `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[n]||""}</svg>`;
+const CHECK = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>`;
+const CHEV = `<svg class="ic chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>`;
+const TAGS = {fixo:"Fixo", prior:"Prioridade", pausa:"Pausa", ciclo:"Lavanderia"};
+const WEEK = ["seg","ter","qua","qui","sex","sab","dom"];
+const ICON_CHOICES = ["cup","door","basket","spark","plate","list","check","fridge","bed","towel","window","cabinet","coffee","wash","shoe","home","flame","drop","star","clock","calendar"];
+const pad = n => String(n).padStart(2,"0");
+const isoOf = d => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const parseISO = s => { const [y,m,d] = s.split("-").map(Number); return new Date(y, m-1, d); };
+const weekdayId = iso => WEEK[(parseISO(iso).getDay()+6)%7];
+const addDays = (iso, n) => { const d = parseISO(iso); d.setDate(d.getDate()+n); return isoOf(d); };
+const mondayOf = iso => addDays(iso, -WEEK.indexOf(weekdayId(iso)));
+const dateOfWeekday = (iso, id) => addDays(mondayOf(iso), WEEK.indexOf(id));
+const fmtDate = (iso, opts={weekday:"long", day:"2-digit", month:"long", year:"numeric"}) => parseISO(iso).toLocaleDateString("pt-BR", opts);
+const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+const dm = iso => fmtDate(iso, {day:"2-digit", month:"2-digit"});
+const uid = () => Math.random().toString(36).slice(2,8) + Date.now().toString(36).slice(-4);
+const clone = o => JSON.parse(JSON.stringify(o));
+const slug = s => String(s).normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^\w]+/g,"_").replace(/^_|_$/g,"") || "casa";
+
+/* ---------- dados: casas, rotinas e registros ---------- */
+const KEY = "rotinaGeral.app.v2", OLD_KEY = "casaArmando.rotina.v1";
+let storageOK = true, DB = null;
+
+function houseFromSeed(name){ const h = clone(SEED); h.id = uid(); if (name) h.name = name; h.created = Date.now(); return h; }
+function blankHouse(name){
+  return { id:uid(), name, subtitle:SEED.subtitle, created:Date.now(), closingResult:SEED.closingResult,
+    days: SEED.days.map(d => ({id:d.id, abbr:d.abbr, name:d.name, active:!["sab","dom"].includes(d.id), focus:"", goal:"", priorities:[], blocks:[]})),
+    closing:[], guides:[] };
+}
+function load(){
+  let raw = null;
+  try { raw = localStorage.getItem(KEY); } catch(e){ storageOK = false; }
+  try { DB = raw ? JSON.parse(raw) : null; } catch(e){ DB = null; }
+  if (!DB || !Array.isArray(DB.houses) || !DB.houses.length) {
+    const h = clone(SEED); h.id = "casa-1"; h.created = Date.now();
+    DB = {v:2, current:h.id, houses:[h], records:{[h.id]:{}}, pin:""};
+    // traz as marcações da versão 1 (mesmo endereço) — os códigos das tarefas foram preservados
+    let migrated = false;
+    try { const old = JSON.parse(localStorage.getItem(OLD_KEY) || "null"); if (old && old.records) { DB.records[h.id] = old.records; migrated = true; } } catch(e){}
+    // instalação nova: o app pergunta o nome da casa ou do cliente na primeira abertura
+    if (!migrated) { h.name = "Minha casa"; DB.needsName = true; }
+    save();
+  }
+  if (!DB.records) DB.records = {};
+  if (!DB.houses.some(h => h.id === DB.current)) DB.current = DB.houses[0].id;
+}
+function save(){
+  try { localStorage.setItem(KEY, JSON.stringify(DB)); storageOK = true; }
+  catch(e){ storageOK = false; }
+}
+let saveT = null;
+function saveSoon(){ clearTimeout(saveT); saveT = setTimeout(save, 250); }
+const H = () => DB.houses.find(h => h.id === DB.current);
+const RECS = () => (DB.records[DB.current] ||= {});
+const activeDays = () => H().days.filter(d => d.active);
+const dayById = id => H().days.find(d => d.id === id);
+const dayNum = d => pad(activeDays().indexOf(d) + 1);
+
+function blocksOf(dayId){
+  const h = H(), d = dayById(dayId);
+  const out = d.blocks.map((b,i) => ({...b, label:"Bloco " + pad(i+1), code:"B" + pad(i+1),
+    tasks:b.tasks.filter(t => (t.t||"").trim())}));
+  const cl = h.closing.filter(c => (c.t||"").trim());
+  if (cl.length) out.push({id:"c", label:"Todos os dias", code:"CONF", name:"Conferência final", when:"Todos os dias · antes de sair",
+    icon:"check", time:"", result:h.closingResult || "", tasks:cl.map(c => ({...c, id:`${dayId}-${c.id}`}))});
+  return out;
+}
+const allTasks = day => blocksOf(day).flatMap(b => b.tasks.map(t => ({...t, block:b})));
+
+const rkey = (date, day) => `${date}|${day}`;
+function rec(date, day, create=false){
+  const R = RECS(), k = rkey(date, day);
+  if (!R[k] && create) R[k] = {done:{}, obs:"", updated:Date.now()};
+  return R[k] || {done:{}, obs:""};
+}
+function progress(date, day){
+  const r = rec(date, day), ts = allTasks(day);
+  const done = ts.filter(t => r.done[t.id]).length;
+  return {done, total:ts.length, pct: ts.length ? Math.round(done*100/ts.length) : 0};
+}
+function weekProgress(iso){
+  let done = 0, total = 0;
+  activeDays().forEach(d => { const p = progress(dateOfWeekday(iso, d.id), d.id); done += p.done; total += p.total; });
+  return {done, total, pct: total ? Math.round(done*100/total) : 0};
+}
+
+/* ---------- estado da tela ---------- */
+const today = isoOf(new Date());
+const S = { date: today, onlyPending:false, closed:{}, unlocked:false, edOpen:{}, focusSel:null };
+try { const sd = sessionStorage.getItem(KEY+".date"); if (sd) S.date = sd; if (sessionStorage.getItem(KEY+".unl")) S.unlocked = true; } catch(e){}
+function setDate(iso){ S.date = iso; try { sessionStorage.setItem(KEY+".date", iso); } catch(e){} }
+function setUnlocked(v){ S.unlocked = v; try { v ? sessionStorage.setItem(KEY+".unl", "1") : sessionStorage.removeItem(KEY+".unl"); } catch(e){} }
+
+function toast(msg){ const t = $("#toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(t._h); t._h = setTimeout(()=>t.classList.remove("show"), 2400); }
+function ring(p){
+  const r = 17, c = 2*Math.PI*r, off = c*(1-p/100);
+  return `<svg class="ring" viewBox="0 0 42 42"><circle class="bgc" cx="21" cy="21" r="${r}" fill="none" stroke-width="3.5"/><circle class="fg" cx="21" cy="21" r="${r}" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="${c}" stroke-dashoffset="${off}" transform="rotate(-90 21 21)"/><text x="21" y="24.5" text-anchor="middle">${p}%</text></svg>`;
+}
+const storageNote = () => storageOK
+  ? `As marcações ficam salvas somente neste aparelho. Para guardar uma cópia ou levar a outro aparelho, use Gestão › Backup.`
+  : `<span style="color:var(--rust)">Este navegador não permite salvar: as marcações serão perdidas ao fechar a página.</span>`;
+const footer = () => `<div class="foot"><img src="${LOGO_DARK}" alt="">Gisele Oliveira · Personal Organizer de Alto Padrão</div>`;
+
+function appBar(title, tabs){
+  return `<div class="bar"><div class="in">
+    <button class="ib" data-nav="" aria-label="Voltar ao início">${icon("home")}</button>
+    <div class="tt">${esc(title)}</div>
+    ${tabs && tabs.print && canPrint() ? `<button class="ib" data-act="print" aria-label="Imprimir rotina">${icon("printer")}</button>` : ""}
+  </div>
+  ${tabs ? `<div class="tabs" role="tablist">${tabs.days.map(d => `<button class="tab ${d.id===tabs.active?"on":""}" role="tab" aria-selected="${d.id===tabs.active}" ${tabs.attr}="${d.id}">${d.abbr}</button>`).join("")}</div>` : ""}
+  </div>${S.unlocked && tabs && tabs.edit ? `<div class="edflag">Modo de edição</div>` : ""}`;
+}
+
+/* ---------- início ---------- */
+function viewHome(){
+  const h = H(), wd = weekdayId(S.date), d = dayById(wd), act = activeDays();
+  const isAct = d && d.active && allTasks(wd).length;
+  const p = isAct ? progress(S.date, wd) : null;
+  const mon = mondayOf(S.date), wk = weekProgress(S.date);
+  return `
+  <header class="hero">
+    <img src="${LOGO_LIGHT}" alt="Gisele Oliveira — Personal Organizer">
+    <div class="hname">${DB.houses.length > 1
+      ? `<button class="hswitch" data-act="pickhouse" aria-label="Trocar de casa">${esc(h.name)} ▾</button><button class="hedit" data-act="rename" aria-label="Editar o nome da casa">${icon("edit")}</button>`
+      : `<button class="hswitch" data-act="rename" aria-label="Editar o nome da casa">${esc(h.name)} ${icon("edit")}</button>`}</div>
+    <h1>ROTINA GERAL</h1>
+    <div class="sub">${esc(h.subtitle)}</div>
+    <div class="rule"></div>
+    <div class="by">Gisele Oliveira — Personal Organizer de Alto Padrão</div>
+  </header>
+  <main class="wrap">
+    <div class="card datecard">
+      <label><span class="kick lbl">Data de referência</span>
+      <input type="date" id="date" value="${S.date}" aria-label="Data de referência da execução"></label>
+    </div>
+    ${installCard()}
+    ${!act.some(x => x.blocks.some(b => b.tasks.length)) ? `
+    <div class="card"><div class="kick">Rotina ainda vazia</div><p class="serif" style="margin:6px 0 12px">Esta casa ainda não tem tarefas na rotina. Monte os blocos e as tarefas de cada dia no editor.</p>
+      <button class="btn pri" style="width:100%" data-nav="gestao">${icon("edit")}Montar a rotina</button></div>` : isAct ? `
+    <button class="card today" data-goday="${d.id}">
+      <div class="n">${dayNum(d)}</div>
+      <div><div class="kick" style="color:var(--gs)">Rotina de ${esc(dm(S.date))}</div>
+      <div class="d">${esc(d.name)}</div><div class="f">${esc(d.focus)} · ${p.pct}%</div></div>
+      <div class="go">›</div>
+    </button>` : `
+    <div class="card"><div class="kick">Sem rotina neste dia</div><p class="serif" style="margin:6px 0 0">${esc(cap(fmtDate(S.date,{weekday:"long"})))} não tem rotina programada nesta casa. Escolha abaixo o dia que deseja abrir.</p></div>`}
+    ${act.length ? `
+    <div class="sect"><span class="kick">Semana de ${esc(dm(mon))} a ${esc(dm(addDays(mon,6)))}</span></div>
+    <div class="days" style="--n:${act.length}">
+      ${act.map(x => { const dt = dateOfWeekday(S.date, x.id); return `<button class="dcard ${dt===S.date?"cur":""}" data-goday="${x.id}" aria-label="${esc(x.name)}, ${esc(dm(dt))}">
+        <span class="a">${x.abbr}</span><span class="dt">${esc(dm(dt))}</span>${ring(progress(dt, x.id).pct)}</button>`; }).join("")}
+    </div>
+    <div class="card wsum">
+      <div class="top"><span>${wk.done} de ${wk.total} tarefas na semana</span><span class="pct">${wk.pct}%</span></div>
+      <div class="pbar"><i style="width:${wk.pct}%"></i></div>
+      <button class="btn" data-act="weekreport">${icon("download")}Relatório da semana</button>
+    </div>
+    <div class="card dlist">
+      ${act.map(x => `<div class="row" data-goday="${x.id}"><b>${x.abbr}</b><span>${esc(x.focus || "—")}</span></div>`).join("")}
+    </div>` : ""}
+    <div class="links">
+      <button class="lbtn" data-nav="regras">${icon("list")}<span>Regras da casa</span></button>
+      <button class="lbtn" data-nav="historico">${icon("clock")}<span>Histórico</span></button>
+      <button class="lbtn wide" data-nav="gestao">${icon("gear")}<span>Gestão da rotina · casas, edição e backup</span></button>
+    </div>
+    <p class="note">${storageNote()}</p>
+    ${footer()}
+  </main>`;
+}
+
+/* ---------- dia ---------- */
+function viewDay(day){
+  const d = dayById(day), r = rec(S.date, day), p = progress(S.date, day);
+  const blocks = blocksOf(day), flat = allTasks(day);
+  const next = flat.find(t => !r.done[t.id]);
+  const mismatch = weekdayId(S.date) !== day;
+  const pend = flat.filter(t => !r.done[t.id]);
+  const tabDays = activeDays().includes(d) ? activeDays() : [...activeDays(), d];
+  if (!flat.length) return `${appBar(d.name, {days:tabDays, active:day, attr:"data-goday"})}<main class="wrap">
+    <div class="card" style="margin-top:18px"><div class="kick">${esc(d.name)}</div><p class="serif" style="margin:6px 0 12px">Ainda não há tarefas neste dia.</p>
+    <button class="btn pri" style="width:100%" data-edit="${day}">${icon("edit")}Montar a rotina deste dia</button></div>${footer()}</main>`;
+  return `${appBar(d.name, {days:tabDays, active:day, attr:"data-goday", print:true})}
+  <main class="wrap">
+    <div class="ponly" style="padding-top:4px"><div class="kick">ROTINA GERAL · ${esc(H().name)} · Gisele Oliveira — Personal Organizer de Alto Padrão</div></div>
+    <section class="dhead">
+      <div class="kick">${esc(fmtDate(S.date))}</div>
+      <h2>${esc(d.name)}</h2>
+      ${d.focus ? `<div class="foc">${esc(d.focus)}</div>` : ""}
+      ${d.goal ? `<div class="goal">${esc(d.goal)}</div>` : ""}
+      ${mismatch ? `<div class="warn">A data de referência (${esc(fmtDate(S.date,{weekday:"long",day:"2-digit",month:"2-digit"}))}) não é ${esc(d.name.toLowerCase())}. As marcações serão registradas nesta data. <button class="tg2" style="display:inline-flex;min-height:36px;margin-top:8px;padding:0 12px" data-act="pickdate">Alterar data</button></div>` : ""}
+      ${d.priorities.length ? `<div class="chips">${d.priorities.map(x => `<span class="chip">${icon("star")}${esc(x)}</span>`).join("")}</div>` : ""}
+      <div class="prog">
+        <div class="top"><span>${p.done} de ${p.total} concluídas</span><span class="pct">${p.pct}%</span></div>
+        <div class="pbar"><i style="width:${p.pct}%"></i></div>
+      </div>
+    </section>
+    ${next ? `<div class="next"><div><div class="k2">Próximo serviço</div><div class="tx">${esc(next.t)}</div><div class="bk">${next.block.id==="c" ? "Conferência final" : esc(next.block.label + " · " + next.block.name)}</div></div>
+      <button data-done="${next.id}">Feito</button></div>`
+      : `<div class="next done"><div><div class="k2">Dia concluído</div><div class="tx">Todas as tarefas${H().closing.length ? " e a conferência final" : ""} estão marcadas.</div></div></div>`}
+    <div class="ctrl">
+      <button class="tg2 ${S.onlyPending?"on":""}" data-act="pending" aria-pressed="${S.onlyPending}">${icon("list")}Pendentes</button>
+      <button class="tg2" data-act="expand">${icon("expand")}Expandir</button>
+      <button class="tg2" data-act="collapse">Recolher</button>
+    </div>
+    ${blocks.map(b => blockHTML(day, b, r)).join("")}
+    <div class="card">
+      <div class="kick">Observações do dia</div>
+      <textarea id="obs" placeholder="Pendências, ocorrências, itens em falta…" aria-label="Observações do dia">${esc(r.obs||"")}</textarea>
+      <div class="saved" id="saved"></div>
+    </div>
+    <div class="card">
+      <div class="kick" style="margin-bottom:8px">Resumo do dia</div>
+      <div class="sum"><div><div class="n">${p.done}</div><div class="l">realizadas</div></div><div><div class="n">${pend.length}</div><div class="l">pendentes</div></div></div>
+      ${pend.length ? `<div class="kick" style="margin-top:14px">Pendências de conclusão</div><ul class="pend">${pend.map(t => `<li><b>${t.block.code}</b><span>${esc(t.t)}</span></li>`).join("")}</ul>` : ""}
+    </div>
+    <div class="acts">
+      <button class="btn pri" data-act="export">${icon("download")}Exportar relatório</button>
+      ${canPrint() ? `<button class="btn" data-act="print">${icon("printer")}Imprimir rotina</button>` : ""}
+      <button class="btn dan ${canPrint() ? "full" : ""}" data-act="reset">Reiniciar o checklist deste dia</button>
+    </div>
+    <p class="note noprint">${storageNote()}</p>
+    ${footer()}
+  </main>`;
+}
+
+function blockHTML(day, b, r){
+  const key = `${day}-${b.id}`;
+  const done = b.tasks.filter(t => r.done[t.id]).length;
+  const complete = b.tasks.length > 0 && done === b.tasks.length;
+  const closed = S.closed[key] ?? false;
+  const shown = S.onlyPending ? b.tasks.filter(t => !r.done[t.id]) : b.tasks;
+  const when = [b.time, b.when].filter(Boolean).join(" · ");
+  return `<section class="blk ${complete?"complete":""} ${closed?"closed":""}">
+    <button class="bh" data-toggle="${key}" aria-expanded="${!closed}">
+      <span class="bi">${complete ? icon("check") : icon(b.icon || "list")}</span>
+      <span class="bt"><span class="bn">${esc(b.label)}</span><span class="nm" style="display:block">${esc(b.name)}</span>${when ? `<span class="wh">${esc(when)}</span>` : ""}</span>
+      <span class="ct">${done}/${b.tasks.length}</span>${CHEV}
+    </button>
+    <div class="bb">
+      ${shown.length ? shown.map(t => taskHTML(t, r)).join("") : `<div class="empty">${b.tasks.length ? "Tudo concluído neste bloco." : "Nenhuma tarefa neste bloco."}</div>`}
+      ${b.result ? `<div class="res"><b>Resultado esperado</b>${esc(b.result)}</div>` : ""}
+    </div>
+  </section>`;
+}
+
+function taskHTML(t, r){
+  const on = !!r.done[t.id];
+  const tag = t.tag && TAGS[t.tag] ? `<span class="tag ${t.tag}">${TAGS[t.tag]}</span>` : "";
+  const note = t.note ? `<span class="tnote">${esc(t.note)}</span>` : "";
+  return `<label class="task ${on?"on":""} ${t.tag==="pausa"?"pausa":""}">
+    <input type="checkbox" data-task="${esc(t.id)}" ${on?"checked":""} aria-label="${esc(t.t)}">
+    <span class="box">${CHECK}</span>
+    <span class="txt">${esc(t.t)}${tag}${note}</span></label>`;
+}
+
+/* ---------- regras da casa ---------- */
+const GSECT = [["freq","Frequências"],["amb","Cuidados por ambiente"],["princ","Princípios"],["val","A validar"]];
+let ruleTab = "semana";
+function guideCard(g, i){
+  const ed = S.unlocked ? `<button class="gbtn" data-gedit="${g.id}" aria-label="Editar ${esc(g.title)}">${icon("edit")}</button>` : "";
+  const numbered = g.section === "princ" || g.section === "val";
+  const head = numbered ? `<span style="color:var(--gold);font-size:15px">${pad(i+1)}</span>` : icon(g.icon || "list");
+  const st = g.section === "freq" && g.status ? `<span class="st ${g.status!=="Definido"?"v":""}">${esc(g.status)}</span>` : "";
+  const body = numbered ? g.items.map(x => `<p style="margin:0 0 4px;font-size:15px">${esc(x)}</p>`).join("")
+    : `<ul>${g.items.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
+  return `<div class="card rcard"><h3>${head}${esc(g.title)}${st}${ed}</h3>${g.meta ? `<div class="meta">${esc(g.meta)}</div>` : ""}${body}</div>`;
+}
+function viewRules(){
+  const h = H(), act = activeDays();
+  const has = k => h.guides.some(g => g.section === k);
+  const tabs = [["semana","Visão semanal"], ...GSECT.slice(0,2).filter(([k]) => S.unlocked || has(k)), ["fim","Encerramento"], ...GSECT.slice(2).filter(([k]) => S.unlocked || has(k))];
+  if (!tabs.some(([k]) => k === ruleTab)) ruleTab = "semana";
+  let body = "";
+  if (ruleTab === "semana") {
+    const rows = [["Foco do dia", d => d.focus || "—"], ["Prioridades", d => d.priorities.join(" · ") || "—"], ["Entrega do dia", d => d.goal || "—"],
+      ["Blocos e tarefas", d => { const b = d.blocks.length, t = d.blocks.reduce((a,x) => a + x.tasks.filter(y => (y.t||"").trim()).length, 0); return `${b} ${b===1?"bloco":"blocos"} · ${t} ${t===1?"tarefa":"tarefas"}`; }]];
+    body = act.length ? `<div class="card wk">${rows.map(([lab, fn]) => `<div class="row"><div class="lab">${esc(lab)}</div><div class="vals">${act.map(d => `<b>${d.abbr}</b><span>${esc(fn(d))}</span>`).join("")}</div></div>`).join("")}</div>`
+      : `<div class="card"><p class="serif" style="margin:0;color:var(--mut)">Nenhum dia com rotina ativa.</p></div>`;
+  } else if (ruleTab === "fim") {
+    body = (h.closing.length ? `<div class="card rcard"><h3>${icon("check")}Conferência final · todos os dias</h3><ul>${h.closing.filter(c => c.t.trim()).map(c => `<li>${esc(c.t)}</li>`).join("")}</ul></div>` : "") +
+      act.filter(d => d.blocks.length).map(d => { const b = d.blocks[d.blocks.length-1]; return `<div class="card rcard"><h3>${icon("clock")}${esc(d.name)}</h3><div class="meta">${esc(b.name)}</div><ul>${b.tasks.filter(t => t.t.trim()).map(t => `<li>${esc(t.t)}</li>`).join("")}</ul></div>`; }).join("")
+      || `<div class="card"><p class="serif" style="margin:0;color:var(--mut)">Nenhum encerramento definido.</p></div>`;
+    if (S.unlocked) body += `<button class="addb" data-nav="editar/${(act[0]||h.days[0]).id}">${icon("edit")}Editar a conferência final no editor</button>`;
+  } else {
+    const list = h.guides.filter(g => g.section === ruleTab);
+    body = list.map(guideCard).join("") || `<div class="card"><p class="serif" style="margin:0;color:var(--mut)">Nenhuma orientação nesta seção.</p></div>`;
+    if (S.unlocked) body += `<button class="addb" data-gadd="${ruleTab}">${icon("plus")}Adicionar orientação</button>`;
+  }
+  return `${appBar("Regras da casa")}${S.unlocked ? `<div class="edflag">Modo de edição</div>` : ""}<main class="wrap">
+    <div class="seg" role="tablist">${tabs.map(([k,l]) => `<button class="${k===ruleTab?"on":""}" data-rtab="${k}">${l}</button>`).join("")}</div>
+    ${body}${footer()}</main>`;
+}
+
+function guideSheet(g, section){
+  const isNew = !g; g = g || {section, title:"", meta:"", icon:"list", items:[], status:"Definido"};
+  const sec = g.section;
+  openSheet(`<div class="kick">${esc((GSECT.find(([k]) => k===sec)||[])[1] || "")}</div><h3>${isNew ? "Nova orientação" : "Editar orientação"}</h3>
+    <label class="fld"><span>Título</span><input class="inp" id="g-title" value="${esc(g.title)}"></label>
+    ${sec === "freq" || sec === "amb" ? `<label class="fld"><span>${sec==="freq" ? "Frequência e dias" : "Detalhe (opcional)"}</span><input class="inp" id="g-meta" value="${esc(g.meta)}"></label>` : ""}
+    ${sec === "freq" ? `<label class="fld"><span>Situação</span><select class="inp" id="g-status">${["Definido","A validar"].map(s => `<option ${s===g.status?"selected":""}>${s}</option>`).join("")}</select></label>` : ""}
+    ${sec === "freq" || sec === "amb" ? `<label class="fld"><span>Ícone</span><select class="inp" id="g-icon">${ICON_CHOICES.map(n => `<option ${n===g.icon?"selected":""}>${n}</option>`).join("")}</select></label>` : ""}
+    <label class="fld"><span>${sec === "princ" || sec === "val" ? "Descrição" : "Itens · um por linha"}</span><textarea class="inp" id="g-items" style="min-height:140px">${esc(g.items.join("\n"))}</textarea></label>
+    <div class="acts">
+      <button class="btn pri ${isNew ? "full" : ""}" data-act="g-save" data-id="${isNew ? "" : g.id}" data-sec="${sec}">Salvar</button>
+      ${isNew ? "" : `<button class="btn dan" data-act="g-del" data-id="${g.id}">Excluir</button>`}
+      <button class="btn full" data-act="sheet-close">Cancelar</button>
+    </div>`);
+}
+function guideSave(id, sec){
+  const h = H(), v = s => { const el = $(s); return el ? el.value.trim() : ""; };
+  const title = v("#g-title"); if (!title) { toast("Informe um título"); return; }
+  const data = {title, meta:v("#g-meta"), status:v("#g-status") || undefined, icon:v("#g-icon") || "list",
+    items:$("#g-items").value.split("\n").map(s => s.trim()).filter(Boolean)};
+  if (id) Object.assign(h.guides.find(g => g.id === id), data);
+  else h.guides.push({id:uid(), section:sec, ...data});
+  save(); closeSheet(); route(); toast("Orientação salva");
+}
+
+/* ---------- histórico ---------- */
+function viewHistory(){
+  const rows = Object.entries(RECS())
+    .map(([k,v]) => { const [date, day] = k.split("|"); return {date, day, v}; })
+    .filter(x => dayById(x.day))
+    .map(x => ({...x, p:progress(x.date, x.day)}))
+    .filter(x => x.p.done > 0 || (x.v.obs||"").trim())
+    .sort((a,b) => b.date.localeCompare(a.date) || WEEK.indexOf(a.day)-WEEK.indexOf(b.day));
+  return `${appBar("Histórico · " + H().name)}<main class="wrap">
+    <div class="card hist">
+      <div class="kick" style="margin-bottom:6px">Registros neste aparelho</div>
+      ${rows.length ? rows.map(x => `<div class="row" data-open="${x.date}|${x.day}">
+        <div class="dt"><div>${esc(fmtDate(x.date,{weekday:"short",day:"2-digit",month:"2-digit",year:"numeric"}))}</div><div>Rotina de ${esc(dayById(x.day).name)} · ${x.p.done} de ${x.p.total}</div></div>${ring(x.p.pct)}</div>`).join("")
+        : `<p class="serif" style="margin:6px 0 0;color:var(--mut)">Nenhum registro ainda. As marcações aparecem aqui por data.</p>`}
+    </div>
+    ${rows.length ? `<div class="acts"><button class="btn dan full" data-act="wipe">Apagar o histórico desta casa neste aparelho</button></div>` : ""}
+    <p class="note">${storageNote()}</p>${footer()}</main>`;
+}
+
+/* ---------- gestão: casas, edição, compartilhamento e backup ---------- */
+function viewManage(){
+  const h = H(), first = (activeDays()[0] || h.days[0]).id;
+  return `${appBar("Gestão da rotina")}<div class="edflag">Modo de edição</div><main class="wrap">
+    <div class="card">
+      <div class="kick">Casa atual</div>
+      <label class="fld"><span>Nome da casa</span><input class="inp" data-e="h.name" value="${esc(h.name)}"></label>
+      <label class="fld"><span>Subtítulo</span><input class="inp" data-e="h.subtitle" value="${esc(h.subtitle)}"></label>
+      <div class="acts">
+        <button class="btn pri full" data-nav="editar/${first}">${icon("edit")}Editar rotina por dia</button>
+        <button class="btn full" data-nav="regras">${icon("list")}Editar regras da casa</button>
+      </div>
+    </div>
+
+    <div class="sect"><span class="kick">Casas neste aparelho</span></div>
+    <div class="card">
+      ${DB.houses.map(x => `<div class="hrow"><div class="nm"><div>${esc(x.name)}</div><div>${x.days.filter(d => d.active).length} dias · ${x.days.reduce((a,d) => a + d.blocks.reduce((b,y) => b + y.tasks.length, 0), 0)} tarefas</div></div>
+        ${x.id === DB.current ? `<span class="cur">Atual</span>` : `<button class="btn" data-act="house-use" data-id="${x.id}">Abrir</button>`}
+        ${DB.houses.length > 1 ? `<button class="mini dan" data-act="house-del" data-id="${x.id}" aria-label="Excluir ${esc(x.name)}">${icon("trash")}</button>` : ""}</div>`).join("")}
+      <button class="addb" data-act="house-new">${icon("plus")}Nova casa</button>
+    </div>
+
+    <div class="sect"><span class="kick">Enviar rotina a outro aparelho</span></div>
+    <div class="card">
+      <p class="help" style="margin-top:0">Gere o arquivo da rotina desta casa e envie (por WhatsApp ou e-mail) para quem vai executar. No outro aparelho, abra o app, entre em Gestão e toque em <b>Importar arquivo</b>. Se a casa já existir lá, a rotina é atualizada e o histórico é mantido.</p>
+      <div class="acts">
+        <button class="btn pri" data-act="export-house">${icon("share")}Enviar rotina</button>
+        <button class="btn" data-act="import">${icon("upload")}Importar arquivo</button>
+      </div>
+    </div>
+
+    <div class="sect"><span class="kick">Backup completo</span></div>
+    <div class="card">
+      <p class="help" style="margin-top:0">Salva todas as casas, rotinas e marcações deste aparelho em um arquivo. Use para trocar de celular ou guardar uma cópia de segurança. Para restaurar, use <b>Importar arquivo</b>.</p>
+      <div class="acts"><button class="btn full" data-act="export-backup">${icon("download")}Salvar backup</button></div>
+    </div>
+
+    <div class="sect"><span class="kick">Proteção da edição</span></div>
+    <div class="card">
+      <p class="help" style="margin-top:0">${DB.pin ? "A gestão está protegida por senha numérica neste aparelho." : "Defina uma senha numérica para evitar alterações acidentais na rotina por quem só executa as tarefas."}</p>
+      <div class="acts">
+        <button class="btn ${DB.pin ? "" : "full"}" data-act="pin-set">${icon("lock")}${DB.pin ? "Trocar senha" : "Definir senha"}</button>
+        ${DB.pin ? `<button class="btn dan" data-act="pin-del">Remover senha</button>` : ""}
+        <button class="btn full" data-act="lock">Sair do modo de edição</button>
+      </div>
+    </div>
+    <p class="note">Versão ${APP_VERSION}</p>
+    ${footer()}</main>`;
+}
+
+function newHouseSheet(){
+  openSheet(`<div class="kick">Gestão</div><h3>Nova casa</h3>
+    <label class="fld"><span>Nome da casa</span><input class="inp" id="nh-name" placeholder="Ex.: Residência Jardins"></label>
+    <div style="margin-top:8px">
+      <label class="opt"><input type="radio" name="nh" value="seed" checked><span><b>Partir da rotina modelo</b><small>Rotina residencial completa de segunda a sexta, com regras da casa, para ajustar.</small></span></label>
+      <label class="opt"><input type="radio" name="nh" value="dup"><span><b>Duplicar a casa atual</b><small>Copia a rotina e as regras de ${esc(H().name)}, sem o histórico.</small></span></label>
+      <label class="opt"><input type="radio" name="nh" value="blank"><span><b>Começar em branco</b><small>Dias de segunda a sexta ativos, sem blocos nem tarefas.</small></span></label>
+    </div>
+    <div class="acts"><button class="btn pri full" data-act="house-create">Criar casa</button><button class="btn full" data-act="sheet-close">Cancelar</button></div>`);
+  setTimeout(() => { const i = $("#nh-name"); if (i) i.focus(); }, 50);
+}
+function createHouse(){
+  const name = $("#nh-name").value.trim(); if (!name) { toast("Informe o nome da casa"); return; }
+  const mode = (document.querySelector('input[name="nh"]:checked') || {}).value;
+  let h;
+  if (mode === "dup") { h = clone(H()); h.id = uid(); h.name = name; h.created = Date.now(); }
+  else if (mode === "blank") h = blankHouse(name);
+  else h = houseFromSeed(name);
+  DB.houses.push(h); DB.records[h.id] = {}; DB.current = h.id; save();
+  closeSheet(); location.hash = "#/gestao"; route(); toast("Casa criada");
+}
+
+/* ---------- editor da rotina ---------- */
+function viewEditor(day){
+  const h = H(), d = dayById(day);
+  const others = h.days.filter(x => x.id !== day && x.blocks.length);
+  return `${appBar("Editar rotina", {days:h.days, active:day, attr:"data-edit", edit:true})}<main class="wrap">
+    <section class="dhead"><div class="kick">${esc(h.name)}</div><h2>${esc(d.name)}</h2></section>
+    <div class="card">
+      <label class="sw"><input type="checkbox" data-e="active" ${d.active?"checked":""}> Dia com rotina ativa</label>
+      ${d.active ? "" : `<p class="help">Este dia não aparece na tela inicial nem na semana. Você pode montar as tarefas e ativá-lo depois.</p>`}
+      <label class="fld"><span>Foco do dia</span><input class="inp" data-e="focus" value="${esc(d.focus)}" placeholder="Ex.: Organização geral e abertura da semana"></label>
+      <label class="fld"><span>Objetivo · entrega do dia</span><textarea class="inp" data-e="goal">${esc(d.goal)}</textarea></label>
+      <label class="fld"><span>Prioridades · uma por linha</span><textarea class="inp" data-e="prio">${esc(d.priorities.join("\n"))}</textarea></label>
+    </div>
+    <div class="sect"><span class="kick">Blocos do dia</span></div>
+    ${d.blocks.map((b,i) => editBlockHTML(d, b, i)).join("") || `<div class="card"><p class="serif" style="margin:0;color:var(--mut)">Nenhum bloco ainda. Comece adicionando o primeiro bloco do dia.</p></div>`}
+    <button class="addb" data-ed="addBlock">${icon("plus")}Adicionar bloco</button>
+    ${others.length ? `<div class="card">
+      <div class="kick">Copiar de outro dia</div>
+      <div class="etools"><select class="inp" id="copysrc">${others.map(x => `<option value="${x.id}">${esc(x.name)}</option>`).join("")}</select>
+      <button class="btn" data-ed="copyDay">${icon("copy")}Copiar</button></div>
+      <p class="help">Substitui foco, objetivo, prioridades e blocos de ${esc(d.name.toLowerCase())} por uma cópia do dia escolhido.</p>
+    </div>` : ""}
+    <div class="sect"><span class="kick">Conferência final · todos os dias</span></div>
+    <div class="card">
+      ${h.closing.map((c,i) => `<div class="etools"><input class="inp" data-e="c.${i}" value="${esc(c.t)}" placeholder="Item da conferência">
+        <button class="mini" data-ed="upC" data-i="${i}" ${i===0?"disabled":""} aria-label="Subir">${icon("up")}</button>
+        <button class="mini dan" data-ed="delC" data-i="${i}" aria-label="Excluir item">${icon("trash")}</button></div>`).join("") || `<p class="help" style="margin-top:0">Sem conferência final.</p>`}
+      <button class="addb" data-ed="addC">${icon("plus")}Adicionar item</button>
+      <label class="fld"><span>Resultado esperado da conferência</span><input class="inp" data-e="h.closingResult" value="${esc(h.closingResult||"")}"></label>
+    </div>
+    <p class="note">As alterações são salvas automaticamente neste aparelho. Para levar a rotina a outro celular, use Gestão › Enviar rotina.</p>
+    ${footer()}</main>`;
+}
+function editBlockHTML(d, b, i){
+  const open = S.edOpen[b.id] ?? false, n = d.blocks.length;
+  return `<details class="eblk" data-bid="${b.id}" ${open?"open":""}>
+    <summary><span class="bi">${icon(b.icon || "list")}</span><span class="bt"><span class="kick">Bloco ${pad(i+1)}</span><span class="serif" style="display:block;font-size:18px;color:var(--gd)">${esc(b.name || "Sem nome")}</span><span style="font-size:13px;color:var(--mut)">${b.tasks.length} ${b.tasks.length===1?"tarefa":"tarefas"}</span></span>${CHEV}</summary>
+    <div class="ebody">
+      <label class="fld"><span>Nome do bloco</span><input class="inp" data-e="b.${i}.name" value="${esc(b.name)}"></label>
+      <div class="row2">
+        <label class="fld"><span>Horário</span><input class="inp" data-e="b.${i}.time" value="${esc(b.time||"")}" placeholder="08:00 – 08:40"></label>
+        <label class="fld"><span>Ícone</span><select class="inp" data-e="b.${i}.icon">${ICON_CHOICES.map(x => `<option ${x===b.icon?"selected":""}>${x}</option>`).join("")}</select></label>
+      </div>
+      <label class="fld"><span>Quando</span><input class="inp" data-e="b.${i}.when" value="${esc(b.when||"")}" placeholder="Ex.: Ao chegar · antes do café da família"></label>
+      <label class="fld"><span>Resultado esperado</span><textarea class="inp" data-e="b.${i}.result">${esc(b.result||"")}</textarea></label>
+      <div class="kick" style="margin-top:16px">Tarefas</div>
+      ${b.tasks.map((t,j) => `<div class="etask">
+        <div class="num">Tarefa ${j+1}</div>
+        <textarea class="inp" data-e="b.${i}.t.${j}.t" placeholder="Descreva a tarefa">${esc(t.t)}</textarea>
+        <input class="inp" style="margin-top:8px" data-e="b.${i}.t.${j}.note" value="${esc(t.note||"")}" placeholder="Observação (opcional)">
+        <div class="etools">
+          <select class="inp" data-e="b.${i}.t.${j}.tag" aria-label="Marcação"><option value="">Sem marcação</option>${Object.entries(TAGS).map(([k,l]) => `<option value="${k}" ${t.tag===k?"selected":""}>${l}</option>`).join("")}</select>
+          <button class="mini" data-ed="upT" data-i="${i}" data-j="${j}" ${j===0?"disabled":""} aria-label="Subir tarefa">${icon("up")}</button>
+          <button class="mini" data-ed="downT" data-i="${i}" data-j="${j}" ${j===b.tasks.length-1?"disabled":""} aria-label="Descer tarefa">${icon("down")}</button>
+          <button class="mini dan" data-ed="delT" data-i="${i}" data-j="${j}" aria-label="Excluir tarefa">${icon("trash")}</button>
+        </div></div>`).join("")}
+      <button class="addb" data-ed="addT" data-i="${i}">${icon("plus")}Adicionar tarefa</button>
+      <div class="bacts"><span class="sp">Bloco ${pad(i+1)} de ${n}</span>
+        <button class="mini" data-ed="upB" data-i="${i}" ${i===0?"disabled":""} aria-label="Mover bloco para cima">${icon("up")}</button>
+        <button class="mini" data-ed="downB" data-i="${i}" ${i===n-1?"disabled":""} aria-label="Mover bloco para baixo">${icon("down")}</button>
+        <button class="mini dan" data-ed="delB" data-i="${i}" aria-label="Excluir bloco">${icon("trash")}</button></div>
+    </div></details>`;
+}
+const edDay = () => { const m = location.hash.match(/editar\/(\w+)/); return m ? m[1] : null; };
+function applyEdit(path, el){
+  const h = H(), parts = path.split("."), val = el.type === "checkbox" ? el.checked : el.value;
+  if (parts[0] === "h") { h[parts[1]] = val; saveSoon(); return; }
+  if (parts[0] === "c") { h.closing[+parts[1]].t = val; saveSoon(); return; }
+  const d = dayById(edDay()); if (!d) return;
+  if (parts[0] === "active") { d.active = val; save(); rerenderKeepScroll(); return; }
+  if (parts[0] === "focus" || parts[0] === "goal") d[parts[0]] = val;
+  else if (parts[0] === "prio") d.priorities = val.split("\n").map(s => s.trim()).filter(Boolean);
+  else if (parts[0] === "b") {
+    const b = d.blocks[+parts[1]];
+    if (parts[2] === "t") {
+      const t = b.tasks[+parts[3]], f = parts[4];
+      if (f === "t") t.t = val;
+      else if (val.trim()) t[f] = val; else delete t[f];
+    } else b[parts[2]] = val;
+  }
+  saveSoon();
+}
+function edAction(act, el){
+  const h = H(), d = dayById(edDay()), i = +el.dataset.i, j = +el.dataset.j;
+  const mv = (arr, a, b) => { if (b < 0 || b >= arr.length) return; const [x] = arr.splice(a, 1); arr.splice(b, 0, x); };
+  switch (act) {
+    case "addBlock": { const b = {id:uid(), name:"Novo bloco", when:"", time:"", icon:"list", result:"", tasks:[]}; d.blocks.push(b); S.edOpen[b.id] = true; S.focusSel = `[data-e="b.${d.blocks.length-1}.name"]`; break; }
+    case "delB": if (!confirm(`Excluir o bloco "${d.blocks[i].name}" e suas ${d.blocks[i].tasks.length} tarefas?`)) return; d.blocks.splice(i, 1); break;
+    case "upB": mv(d.blocks, i, i-1); break;
+    case "downB": mv(d.blocks, i, i+1); break;
+    case "addT": d.blocks[i].tasks.push({id:uid(), t:""}); S.edOpen[d.blocks[i].id] = true; S.focusSel = `[data-e="b.${i}.t.${d.blocks[i].tasks.length-1}.t"]`; break;
+    case "delT": { const t = d.blocks[i].tasks[j]; if (t.t.trim() && !confirm(`Excluir a tarefa "${t.t}"?`)) return; d.blocks[i].tasks.splice(j, 1); break; }
+    case "upT": mv(d.blocks[i].tasks, j, j-1); break;
+    case "downT": mv(d.blocks[i].tasks, j, j+1); break;
+    case "addC": h.closing.push({id:uid(), t:""}); S.focusSel = `[data-e="c.${h.closing.length-1}"]`; break;
+    case "delC": h.closing.splice(i, 1); break;
+    case "upC": mv(h.closing, i, i-1); break;
+    case "copyDay": {
+      const src = dayById($("#copysrc").value); if (!src) return;
+      if (!confirm(`Substituir a rotina de ${d.name} por uma cópia de ${src.name}? O histórico já registrado é mantido.`)) return;
+      const c = clone(src);
+      Object.assign(d, {focus:c.focus, goal:c.goal, priorities:c.priorities, active:true,
+        blocks:c.blocks.map(b => ({...b, id:uid(), tasks:b.tasks.map(t => ({...t, id:uid()}))}))});
+      toast("Rotina copiada"); break;
+    }
+  }
+  save(); rerenderKeepScroll();
+}
+
+/* ---------- arquivos: relatório, rotina e backup ---------- */
+function reportText(day){
+  const d = dayById(day), r = rec(S.date, day), p = progress(S.date, day), L = [];
+  L.push(`${H().name.toUpperCase()} — RELATÓRIO DE EXECUÇÃO DA ROTINA`, "Gisele Oliveira · Personal Organizer de Alto Padrão", "");
+  L.push(`Data de referência: ${fmtDate(S.date)}`, `Rotina: ${d.name}${d.focus ? " — " + d.focus : ""}`, `Concluídas: ${p.done} de ${p.total} (${p.pct}%)`, "");
+  blocksOf(day).forEach(b => {
+    L.push(b.id === "c" ? "CONFERÊNCIA FINAL" : `${b.label.toUpperCase()} — ${b.name.toUpperCase()}`);
+    b.tasks.forEach(t => L.push(`  [${r.done[t.id] ? "x" : " "}] ${t.t}`));
+    L.push("");
+  });
+  L.push("OBSERVAÇÕES", (r.obs || "").trim() || "—", "", `Relatório gerado em ${new Date().toLocaleString("pt-BR")}.`);
+  return L.join("\n");
+}
+function weekText(){
+  const mon = mondayOf(S.date), wk = weekProgress(S.date), L = [];
+  L.push(`${H().name.toUpperCase()} — RELATÓRIO DA SEMANA`, "Gisele Oliveira · Personal Organizer de Alto Padrão", "");
+  L.push(`Semana de ${fmtDate(mon,{day:"2-digit",month:"2-digit",year:"numeric"})} a ${fmtDate(addDays(mon,6),{day:"2-digit",month:"2-digit",year:"numeric"})}`);
+  L.push(`Concluídas na semana: ${wk.done} de ${wk.total} (${wk.pct}%)`, "");
+  activeDays().forEach(d => {
+    const dt = dateOfWeekday(S.date, d.id), r = rec(dt, d.id), p = progress(dt, d.id);
+    const pend = allTasks(d.id).filter(t => !r.done[t.id]);
+    L.push(`${d.name.toUpperCase()} · ${dm(dt)} — ${p.done} de ${p.total} (${p.pct}%)`);
+    if (p.done === 0) L.push("  Sem marcações registradas.");
+    else if (pend.length) pend.forEach(t => L.push(`  [ ] ${t.block.code} · ${t.t}`));
+    else L.push("  Todas as tarefas concluídas.");
+    if ((r.obs||"").trim()) L.push(`  Observações: ${r.obs.trim()}`);
+    L.push("");
+  });
+  L.push(`Relatório gerado em ${new Date().toLocaleString("pt-BR")}.`);
+  return L.join("\n");
+}
+const isMobile = () => /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) || isIOS();
+function download(blob, name){
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name;
+  document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+}
+async function shareText(text, name, title){
+  if (navigator.share && isMobile()) {
+    try { await navigator.share({title, text}); return; }
+    catch(err){ if (err && err.name === "AbortError") return; }
+  }
+  try { download(new Blob([text], {type:"text/plain;charset=utf-8"}), name); toast("Relatório exportado"); }
+  catch(err) {
+    try { await navigator.clipboard.writeText(text); toast("Relatório copiado para a área de transferência"); }
+    catch(_) { alert(text); }
+  }
+}
+async function shareJSON(obj, name, title){
+  const file = new File([JSON.stringify(obj)], name, {type:"application/json"});
+  if (isMobile() && navigator.canShare && navigator.canShare({files:[file]})) {
+    try { await navigator.share({files:[file], title}); return; }
+    catch(err){ if (err && err.name === "AbortError") return; }
+  }
+  download(file, name); toast("Arquivo salvo");
+}
+function importFile(file){
+  const fr = new FileReader();
+  fr.onload = () => {
+    let data; try { data = JSON.parse(fr.result); } catch(e){ toast("Arquivo inválido"); return; }
+    if (data && data.type === "rotina-geral/casa" && data.house && Array.isArray(data.house.days)) {
+      const h = data.house, ex = DB.houses.findIndex(x => x.id === h.id);
+      if (ex >= 0) {
+        if (!confirm(`Atualizar a rotina de "${DB.houses[ex].name}" com o arquivo recebido? As marcações já feitas neste aparelho são mantidas.`)) return;
+        DB.houses[ex] = h;
+      } else { DB.houses.push(h); DB.records[h.id] = DB.records[h.id] || {}; }
+      delete DB.needsName; DB.current = h.id; save(); route(); toast(`Rotina de ${h.name} importada`);
+    } else if (data && data.type === "rotina-geral/backup" && data.db && Array.isArray(data.db.houses)) {
+      if (!confirm(`Restaurar o backup de ${new Date(data.exported).toLocaleString("pt-BR")}? Todas as casas e marcações deste aparelho serão substituídas pelas do arquivo.`)) return;
+      DB = data.db; if (!DB.records) DB.records = {};
+      if (!DB.houses.some(h => h.id === DB.current)) DB.current = DB.houses[0].id;
+      save(); route(); toast("Backup restaurado");
+    } else toast("Este arquivo não é uma rotina nem um backup do app");
+  };
+  fr.readAsText(file);
+}
+$("#filein").addEventListener("change", e => { const f = e.target.files[0]; if (f) importFile(f); e.target.value = ""; });
+
+/* ---------- folha inferior (instalação, formulários) ---------- */
+function openSheet(inner){
+  closeSheet();
+  const bg = document.createElement("div"); bg.className = "sheet-bg"; bg.id = "sheet";
+  bg.innerHTML = `<div class="sheet" role="dialog" aria-modal="true">${inner}</div>`;
+  bg.addEventListener("click", e => { if (e.target === bg) closeSheet(); });
+  document.body.appendChild(bg);
+}
+function closeSheet(){ const s = document.getElementById("sheet"); if (s) s.remove(); }
+function renameSheet(first){
+  const h = H();
+  openSheet(`<div class="kick">${first ? "Boas-vindas" : "Casa"}</div><h3>${first ? "Para quem é esta rotina?" : "Nome da casa"}</h3>
+    ${first ? `<p class="help" style="margin-top:0">Informe o nome da casa ou do cliente. Ele aparece no topo do app e nos relatórios, e pode ser alterado depois tocando no nome.</p>` : ""}
+    <label class="fld"><span>Nome da casa ou do cliente</span><input class="inp" id="rn-name" value="${first ? "" : esc(h.name)}" placeholder="Ex.: Casa Cristiane"></label>
+    <label class="fld"><span>Subtítulo</span><input class="inp" id="rn-sub" value="${esc(h.subtitle)}"></label>
+    <div class="acts"><button class="btn pri full" data-act="rename-save">Salvar</button>
+    <button class="btn full" data-act="${first ? "rename-skip" : "sheet-close"}">${first ? "Agora não" : "Cancelar"}</button></div>`);
+  setTimeout(() => { const i = $("#rn-name"); if (i) i.focus(); }, 50);
+}
+function pickHouseSheet(){
+  openSheet(`<div class="kick">Casas</div><h3>Abrir a rotina de</h3>
+    ${DB.houses.map(x => `<label class="opt" data-act="house-use" data-id="${x.id}"><input type="radio" name="ph" ${x.id===DB.current?"checked":""}><span><b>${esc(x.name)}</b><small>${esc(x.subtitle)}</small></span></label>`).join("")}
+    <div class="acts"><button class="btn full" data-act="sheet-close">Fechar</button></div>`);
+}
+
+/* ---------- acesso à gestão ---------- */
+function unlock(){
+  if (S.unlocked || !DB.pin) { setUnlocked(true); return true; }
+  const p = prompt("Senha de edição da rotina:");
+  if (p === null) return false;
+  if (p.trim() === DB.pin) { setUnlocked(true); return true; }
+  toast("Senha incorreta"); return false;
+}
+
+/* ---------- roteamento ---------- */
+function route(){
+  const h = location.hash.replace(/^#\/?/, "");
+  const [view, arg] = h.split("/");
+  const app = $("#app");
+  if ((view === "gestao" || view === "editar") && !unlock()) { history.replaceState(null, "", "#/"); return route(); }
+  if (view === "dia" && dayById(arg)) { app.innerHTML = viewDay(arg); bindDay(arg); }
+  else if (view === "editar" && dayById(arg)) app.innerHTML = viewEditor(arg);
+  else if (view === "gestao") app.innerHTML = viewManage();
+  else if (view === "regras") app.innerHTML = viewRules();
+  else if (view === "historico") app.innerHTML = viewHistory();
+  else { app.innerHTML = viewHome(); const di = $("#date"); if (di) di.addEventListener("change", e => { if (e.target.value) { setDate(e.target.value); route(); } }); }
+  if (S.focusSel) { const el = $(S.focusSel); S.focusSel = null; if (el) { el.focus(); if (el.select) el.select(); } }
+  if (DB.needsName && !S.askedName && !view && !$("#sheet")) { S.askedName = true; renameSheet(true); }
+}
+const currentDay = () => { const m = location.hash.match(/dia\/(\w+)/); return m ? m[1] : null; };
+function rerenderKeepScroll(){ const y = window.scrollY; route(); window.scrollTo(0, y); }
+function go(hash){ location.hash = hash; window.scrollTo(0, 0); }
+
+function bindDay(day){
+  const ta = $("#obs");
+  if (ta) ta.addEventListener("input", () => {
+    const r = rec(S.date, day, true); r.obs = ta.value; r.updated = Date.now(); save();
+    $("#saved").textContent = storageOK ? "Observação salva neste aparelho." : "Não foi possível salvar neste navegador.";
+  });
+}
+function setDone(day, id, val){
+  const r = rec(S.date, day, true);
+  if (val) r.done[id] = 1; else delete r.done[id];
+  r.updated = Date.now(); save();
+}
+
+document.addEventListener("input", e => { const p = e.target.dataset && e.target.dataset.e; if (p) applyEdit(p, e.target); });
+document.addEventListener("change", e => {
+  const id = e.target.dataset && e.target.dataset.task;
+  if (!id) return;
+  setDone(currentDay(), id, e.target.checked);
+  rerenderKeepScroll();
+});
+document.addEventListener("toggle", e => { const b = e.target.dataset && e.target.dataset.bid; if (b) S.edOpen[b] = e.target.open; }, true);
+
+document.addEventListener("click", e => {
+  const el = e.target.closest("[data-goday],[data-edit],[data-nav],[data-toggle],[data-act],[data-done],[data-rtab],[data-open],[data-ed],[data-gedit],[data-gadd]");
+  if (!el) return;
+  const ds = el.dataset;
+  if (ds.goday) { setDate(dateOfWeekday(S.date, ds.goday)); go("#/dia/" + ds.goday); return; }
+  if (ds.edit) { go("#/editar/" + ds.edit); return; }
+  if (ds.nav !== undefined) { go(ds.nav ? "#/" + ds.nav : "#/"); return; }
+  if (ds.rtab) { ruleTab = ds.rtab; route(); return; }
+  if (ds.open) { const [date, day] = ds.open.split("|"); setDate(date); go("#/dia/" + day); return; }
+  if (ds.toggle) { S.closed[ds.toggle] = !(S.closed[ds.toggle] ?? false); rerenderKeepScroll(); return; }
+  if (ds.done) { setDone(currentDay(), ds.done, true); toast("Tarefa concluída"); rerenderKeepScroll(); return; }
+  if (ds.ed) { edAction(ds.ed, el); return; }
+  if (ds.gedit) { guideSheet(H().guides.find(g => g.id === ds.gedit)); return; }
+  if (ds.gadd) { guideSheet(null, ds.gadd); return; }
+  const day = currentDay();
+  switch (ds.act) {
+    case "pending": S.onlyPending = !S.onlyPending; rerenderKeepScroll(); break;
+    case "expand": blocksOf(day).forEach(b => S.closed[`${day}-${b.id}`] = false); rerenderKeepScroll(); break;
+    case "collapse": blocksOf(day).forEach(b => S.closed[`${day}-${b.id}`] = true); rerenderKeepScroll(); break;
+    case "print": window.print(); break;
+    case "install": doInstall(); break;
+    case "sheet-close": closeSheet(); break;
+    case "export": shareText(reportText(day), `${slug(H().name)}_${S.date}_${day}.txt`, "ROTINA GERAL · Relatório"); break;
+    case "weekreport": shareText(weekText(), `${slug(H().name)}_semana_${mondayOf(S.date)}.txt`, "ROTINA GERAL · Relatório da semana"); break;
+    case "reset":
+      if (confirm(`Reiniciar o checklist de ${dayById(day).name} em ${fmtDate(S.date,{day:"2-digit",month:"2-digit",year:"numeric"})}? As marcações e a observação deste dia serão apagadas.`)) {
+        delete RECS()[rkey(S.date, day)]; save(); toast("Checklist reiniciado"); rerenderKeepScroll();
+      } break;
+    case "wipe":
+      if (confirm(`Apagar todo o histórico de ${H().name} salvo neste aparelho? Esta ação não pode ser desfeita.`)) { DB.records[DB.current] = {}; save(); route(); toast("Histórico apagado"); }
+      break;
+    case "pickdate": go("#/"); setTimeout(() => { const di = $("#date"); if (di) { di.focus(); if (di.showPicker) try { di.showPicker(); } catch(_){} } }, 60); break;
+    case "pickhouse": pickHouseSheet(); break;
+    case "rename": if (unlock()) renameSheet(false); break;
+    case "rename-save": {
+      const n = $("#rn-name").value.trim(); if (!n) { toast("Informe o nome da casa ou do cliente"); break; }
+      const h = H(); h.name = n; h.subtitle = $("#rn-sub").value.trim() || h.subtitle;
+      delete DB.needsName; save(); closeSheet(); rerenderKeepScroll(); toast("Nome atualizado"); break;
+    }
+    case "rename-skip": delete DB.needsName; save(); closeSheet(); break;
+    case "house-use": DB.current = ds.id; save(); closeSheet(); rerenderKeepScroll(); toast(`Rotina de ${H().name}`); break;
+    case "house-new": newHouseSheet(); break;
+    case "house-create": createHouse(); break;
+    case "house-del": {
+      const x = DB.houses.find(y => y.id === ds.id);
+      if (!x || !confirm(`Excluir "${x.name}" deste aparelho, com a rotina e todo o histórico? Esta ação não pode ser desfeita.`)) break;
+      DB.houses = DB.houses.filter(y => y.id !== ds.id); delete DB.records[ds.id];
+      if (DB.current === ds.id) DB.current = DB.houses[0].id;
+      save(); route(); toast("Casa excluída"); break;
+    }
+    case "export-house": shareJSON({type:"rotina-geral/casa", v:2, exported:Date.now(), house:H()}, `Rotina_${slug(H().name)}.json`, `Rotina · ${H().name}`); break;
+    case "export-backup": shareJSON({type:"rotina-geral/backup", v:2, exported:Date.now(), db:DB}, `Backup_Rotina_Geral_${today}.json`, "Backup · ROTINA GERAL"); break;
+    case "import": $("#filein").click(); break;
+    case "pin-set": {
+      const p = prompt("Nova senha de edição (somente números, mínimo 4):");
+      if (p === null) break;
+      if (!/^\d{4,}$/.test(p.trim())) { toast("Use ao menos 4 números"); break; }
+      DB.pin = p.trim(); save(); route(); toast("Senha definida"); break;
+    }
+    case "pin-del": if (confirm("Remover a senha de edição deste aparelho?")) { DB.pin = ""; save(); route(); toast("Senha removida"); } break;
+    case "lock": setUnlocked(false); go("#/"); toast("Modo de edição encerrado"); break;
+    case "g-save": guideSave(ds.id, ds.sec); break;
+    case "g-del": if (confirm("Excluir esta orientação?")) { const h = H(); h.guides = h.guides.filter(g => g.id !== ds.id); save(); closeSheet(); route(); } break;
+  }
+});
+
+/* ---------- impressão: tudo expandido e sem filtro ---------- */
+let printSnap = null;
+window.addEventListener("beforeprint", () => {
+  const day = currentDay(); if (!day) return;
+  printSnap = {closed:{...S.closed}, only:S.onlyPending};
+  S.onlyPending = false; blocksOf(day).forEach(b => S.closed[`${day}-${b.id}`] = false); route();
+});
+window.addEventListener("afterprint", () => { if (!printSnap) return; S.closed = printSnap.closed; S.onlyPending = printSnap.only; printSnap = null; route(); });
+
+/* ---------- aplicativo instalável ---------- */
+let deferredPrompt = null;
+const isStandalone = () => window.matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+const isIOS = () => /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+const isAndroid = () => /Android/i.test(navigator.userAgent);
+function canPrint(){ return !(isIOS() && isStandalone()); }
+window.addEventListener("beforeinstallprompt", e => { e.preventDefault(); deferredPrompt = e; if (!location.hash.replace(/^#\/?/, "")) rerenderKeepScroll(); });
+window.addEventListener("appinstalled", () => { deferredPrompt = null; closeSheet(); toast("Aplicativo instalado na tela inicial"); rerenderKeepScroll(); });
+function installCard(){
+  if (isStandalone()) return "";
+  return `<div class="card install">
+    <img class="ico" src="icons/icon-192.png" alt="">
+    <div class="tx"><b>Instalar o aplicativo</b>Abra a rotina pela tela inicial, em tela cheia e mesmo sem internet.</div>
+    <button class="btn pri" data-act="install">Instalar</button></div>`;
+}
+const PLUS_IC = `<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/></svg>`;
+const DOTS_IC = `<svg class="ic" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="12" cy="19" r="1.8"/></svg>`;
+function installSheetHTML(){
+  const tip = `<p class="tip">Abra sempre pelo ícone: as marcações feitas no app ficam guardadas no próprio app.</p>`;
+  if (isIOS()) return `<div class="kick">iPhone e iPad</div><h3>Adicionar à Tela de Início</h3><ol>
+    <li><span>Abra este link no <b>Safari</b>.</span></li>
+    <li><span>Toque em <b>Compartilhar</b> ${icon("share")} na barra do navegador.</span></li>
+    <li><span>Role as opções e toque em <b>Adicionar à Tela de Início</b> ${PLUS_IC}.</span></li>
+    <li><span>Confirme em <b>Adicionar</b>. O ícone ROTINA GERAL aparece na tela inicial.</span></li></ol>${tip}`;
+  return `<div class="kick">${isAndroid() ? "Android" : "Navegador"}</div><h3>Instalar o aplicativo</h3><ol>
+    <li><span>Abra este link no <b>Google Chrome</b>.</span></li>
+    <li><span>Toque no menu ${DOTS_IC} no canto superior direito.</span></li>
+    <li><span>Toque em <b>Instalar app</b> ou <b>Adicionar à tela inicial</b>.</span></li>
+    <li><span>Confirme em <b>Instalar</b>. O ícone ROTINA GERAL aparece na tela inicial.</span></li></ol>${tip}`;
+}
+async function doInstall(){
+  if (deferredPrompt) {
+    const p = deferredPrompt; deferredPrompt = null;
+    p.prompt();
+    try { const r = await p.userChoice; if (r.outcome !== "accepted") toast("Instalação cancelada"); } catch(_) {}
+    rerenderKeepScroll(); return;
+  }
+  openSheet(installSheetHTML() + `<button class="btn pri full" style="width:100%" data-act="sheet-close">Entendi</button>`);
+}
+if ("serviceWorker" in navigator && location.protocol !== "file:") {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").then(reg => {
+      reg.addEventListener("updatefound", () => {
+        const w = reg.installing;
+        if (w) w.addEventListener("statechange", () => { if (w.state === "installed" && navigator.serviceWorker.controller) toast("Nova versão instalada — reabra o app para atualizar"); });
+      });
+    }).catch(() => {});
+  });
+  try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist(); } catch(_) {}
+}
+
+load();
+window.addEventListener("hashchange", () => { route(); window.scrollTo(0,0); });
+route();
+</script>
+</body>
+</html>

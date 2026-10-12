@@ -1,0 +1,5 @@
+# App estático: os arquivos ficam na raiz do repositório e não há etapa de build.
+# O comando abaixo não faz nada e substitui qualquer "npm run build" do painel do Netlify.
+[build]
+  publish = "."
+  command = "echo 'ROTINA GERAL: app estático, sem build'"
