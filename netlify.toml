@@ -2,7 +2,7 @@
 # O build copia o app para "public" (é ela que vai ao ar) e coloca a API (api.mjs)
 # no lugar esperado pelo Netlify. Este comando substitui qualquer "npm run build" do painel.
 [build]
-  command = "mkdir -p public netlify/functions && cp index.html manifest.webmanifest sw.js robots.txt *.png public/ && cp api.mjs netlify/functions/api.mjs"
+  command = "mkdir -p public netlify/functions && cp index.html manifest.webmanifest sw.js robots.txt versao.json *.png public/ && cp api.mjs netlify/functions/api.mjs"
   publish = "public"
 
 [functions]

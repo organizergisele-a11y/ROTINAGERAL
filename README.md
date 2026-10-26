@@ -1,4 +1,4 @@
-# ROTINA GERAL · v3.1
+# ROTINA GERAL · v3.1.1
 
 Sistema de gestão e controle de rotinas residenciais (PWA instalável).
 Gisele Oliveira · Personal Organizer de Alto Padrão.
@@ -10,6 +10,7 @@ Todos os arquivos ficam na raiz, sem pastas.
 | `index.html` | O aplicativo (telas, instruções, verificação; logos embutidas) |
 | `manifest.webmanifest`, `sw.js`, `*.png` | Instalação na tela inicial e uso sem internet |
 | `api.mjs` | Base compartilhada (Netlify Functions + Netlify Blobs): contas com PIN, permissões, registros com autoria, fotos, avisos, envio de dados antigos e planilha CSV |
+| `versao.json` | Versão publicada: o app instalado confere este arquivo para se atualizar sozinho |
 | `package.json` | Dependência da API (`@netlify/blobs`) |
 | `netlify.toml` | O build copia o app para `public` e posiciona a API; não é preciso configurar o painel |
 
