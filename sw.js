@@ -1,5 +1,5 @@
 /* ROTINA GERAL · service worker — funcionamento offline */
-const CACHE = "rotina-geral-v2-0-1";
+const CACHE = "rotina-geral-v3-1-0";
 const ASSETS = ["./", "./index.html", "./manifest.webmanifest",
   "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png",
   "./apple-touch-icon.png", "./favicon-32.png"];
@@ -12,7 +12,7 @@ self.addEventListener("activate", e => {
 });
 self.addEventListener("fetch", e => {
   const req = e.request;
-  if (req.method !== "GET" || new URL(req.url).origin !== location.origin) return;
+  if (req.method !== "GET" || new URL(req.url).origin !== location.origin || new URL(req.url).pathname.startsWith("/api/")) return;
   if (req.mode === "navigate") {
     // rede primeiro (recebe atualizações), cópia local quando estiver sem internet
     e.respondWith(fetch(req).then(r => { const c = r.clone(); caches.open(CACHE).then(x => x.put("./index.html", c)); return r; })

@@ -1,5 +1,10 @@
-# App estático: os arquivos ficam na raiz do repositório e não há etapa de build.
-# O comando abaixo não faz nada e substitui qualquer "npm run build" do painel do Netlify.
+# ROTINA GERAL · todos os arquivos ficam soltos na raiz do repositório (sem pastas).
+# O build copia o app para "public" (é ela que vai ao ar) e coloca a API (api.mjs)
+# no lugar esperado pelo Netlify. Este comando substitui qualquer "npm run build" do painel.
 [build]
-  publish = "."
-  command = "echo 'ROTINA GERAL: app estático, sem build'"
+  command = "mkdir -p public netlify/functions && cp index.html manifest.webmanifest sw.js robots.txt *.png public/ && cp api.mjs netlify/functions/api.mjs"
+  publish = "public"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
